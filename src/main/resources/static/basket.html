@@ -1,0 +1,21 @@
+<table>
+    <tr>
+        <th>Название товара</th>
+        <th>Количество</th>
+    </tr>
+    <tr ng-repeat="product in productsInBasket">
+        <td>{{product.name}}</td>
+        <td>{{product.count}}</td>
+        <td>
+            <button ng-click="deleteFromBasket($index)">Удалить</button>
+        </td>
+    </tr>
+</table>
+<label>ФИО
+    <input type="text" ng-model="fullName">
+</label><br>
+<label>Телефон
+    <input type="text" ng-model="telephone">
+</label>
+
+</table>
