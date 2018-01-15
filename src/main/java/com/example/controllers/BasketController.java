@@ -39,18 +39,12 @@ public class BasketController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity createOrder(HttpServletRequest request, @RequestBody Order order1){
+    public ResponseEntity createOrder(HttpServletRequest request, @RequestBody Order order){
         System.out.println("create order");
-        System.out.println(order1.getFullName());
-        Order order = Utils.getOrderInSession(request);
-//        System.out.println(request.);
-//        try {
-//            System.out.println(request.getPart(request.getParameter("fullName")));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (ServletException e) {
-//            e.printStackTrace();
-//        }
+        System.out.println(order.getFullName());
+        System.out.println(order.getTelephone());
+        order.setList(Utils.getOrderInSession(request).getList());
+
 
         return new ResponseEntity(HttpStatus.OK);
 

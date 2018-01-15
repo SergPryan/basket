@@ -29,13 +29,10 @@ app.controller('appCtrl',function ($scope,$http,$filter) {
     }
     $scope.deleteFromBasket = function (index) {
 
-
     }
     $scope.createOrder = function () {
-        var fullName = angular.toJson($scope.fullName)
-        var telephone = angular.toJson($scope.telephone)
-        var data = { "fullName": fullName,
-        "telephone":telephone
+        var data = { "fullName": $scope.fullName,
+        "telephone":$scope.telephone
         }
         console.log(data)
         $http.post('/basket/create',data)
