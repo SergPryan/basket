@@ -2,9 +2,9 @@ app = angular.module('basketApp',['ngRoute'])
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
-        .when('/commons', {
-            templateUrl: 'commons.html',
-            controller: 'basketCtrl'
+        .when('/basket', {
+            templateUrl: 'basket.html',
+            controller: 'appCtrl'
         })
         .when('/list_product', {
             templateUrl: 'list_product.html',
@@ -17,11 +17,27 @@ app.controller('appCtrl',function ($scope,$http,$filter) {
     $http.get('/product/all').then(function (response) {
         $scope.products = response.data
     })
+    $http.get('/basket/all').then(function (response) {
+        $scope.productsInBasket = response.data
+    })
     $scope.addToBasket = function (index) {
-        $http.post('/product/')
+        $http.post('/basket/add',$scope.products[index])
+        $http.get('/basket/all').then(function (response) {
+            $scope.productsInBasket = response.data
+        })
+
     }
-});
+    $scope.deleteFromBasket = function (index) {
 
-app.controller('basketCtrl',function ($scope,$http,$filter) {
 
+    }
+    $scope.createOrder = function () {
+        var fullName = angular.toJson($scope.fullName)
+        var telephone = angular.toJson($scope.telephone)
+        var data = { "fullName": fullName,
+        "telephone":telephone
+        }
+        console.log(data)
+        $http.post('/basket/create',data)
+    }
 });
