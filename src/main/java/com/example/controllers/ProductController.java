@@ -1,6 +1,9 @@
 package com.example.controllers;
 
 import com.example.entity.Product;
+import com.example.service.OrderService;
+import com.example.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,14 +18,12 @@ import java.util.List;
 public class ProductController {
 
 
+    @Autowired
+    ProductService productService;
+
     @GetMapping("/all")
     public ResponseEntity<List<Product>> getAll(){
-        List<Product> result = new ArrayList<>();
-        Product product = new Product();
-        product.setName("name");
-        product.setPrice(10);
-        result.add(product);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
     }
 
 }

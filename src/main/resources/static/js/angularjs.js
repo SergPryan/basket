@@ -28,6 +28,9 @@ app.controller('appCtrl',function ($scope,$http,$filter) {
 
     }
     $scope.deleteFromBasket = function (index) {
+        var idElement = $scope.productsInBasket[index]['id']
+        $http.delete('/basket/delete/'+idElement)
+        $scope.productsInBasket.splice(index,1)
 
     }
     $scope.createOrder = function () {
