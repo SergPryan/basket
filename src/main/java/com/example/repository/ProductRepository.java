@@ -15,15 +15,15 @@ public class ProductRepository {
     JdbcTemplate jdbcTemplate;
 
     public List<Product> getAll(){
-       final String sql = "SELECT * FROM product";
-       List<Product> resut = jdbcTemplate.query(sql, (resultSet, i) -> {
+       final String sql = "SELECT * FROM product WHERE order_id is NULL";
+       List<Product> result = jdbcTemplate.query(sql, (resultSet, i) -> {
            Product product = new Product();
            product.setId(resultSet.getLong("id"));
            product.setName(resultSet.getString("name"));
            product.setPrice(resultSet.getFloat("price"));
            return product;
        });
-       return resut;
+       return result;
 
     }
 
