@@ -20,7 +20,7 @@ public class ProductController {
         List<Product> result = new ArrayList<>();
         Product product = new Product();
         product.setName("name");
-        product.setCount(10);
+        product.setPrice(10);
         result.add(product);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }

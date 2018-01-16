@@ -1,11 +1,11 @@
 <table>
     <tr>
         <th>Название товара</th>
-        <th>Количество</th>
+        <th>Цена</th>
     </tr>
     <tr ng-repeat="product in products">
         <td>{{product.name}}</td>
-        <td>{{product.count}}</td>
+        <td>{{product.price}}</td>
         <td>
             <button ng-click="addToBasket($index)">Добавить</button>
         </td>

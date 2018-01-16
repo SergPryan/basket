@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Order {
 
+    private Long id;
     private String fullName;
     private String telephone;
 
@@ -46,5 +47,13 @@ public class Order {
 
     public void setList(List<Product> list) {
         this.list = list;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

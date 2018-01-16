@@ -4,7 +4,7 @@ package com.example.entity;
 public class Product {
     private Long id;
     private String name;
-    private int count;
+    private float price;
 
     public Long getId() {
         return id;
@@ -22,11 +22,11 @@ public class Product {
         this.name = name;
     }
 
-    public int getCount() {
-        return count;
+    public float getPrice() {
+        return price;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setPrice(float price) {
+        this.price = price;
     }
 }
