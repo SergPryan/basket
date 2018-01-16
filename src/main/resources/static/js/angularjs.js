@@ -37,6 +37,9 @@ app.controller('appCtrl',function ($scope,$http,$filter) {
         var data = { "fullName": $scope.fullName,
         "telephone":$scope.telephone
         }
+        $scope.fullName =''
+        $scope.telephone = ''
+        $scope.productsInBasket = []
         $http.post('/basket/create',data)
     }
 });

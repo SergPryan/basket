@@ -59,6 +59,7 @@ public class BasketController {
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
         orderService.createOrder(order);
+        order.getList().clear();
         return new ResponseEntity(HttpStatus.OK);
 
     }
