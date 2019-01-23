@@ -26,7 +26,6 @@ public class OrderRepository {
             return ps;
         }, keyHolder);
 
-//    jdbcTemplate.update(sql,order.getFullName(),String.valueOf(order.getTelephone()),keyHolder);
         System.out.println("key = " + keyHolder.getKey().intValue());
         order.setId(keyHolder.getKey().longValue());
         order.getList().forEach(element ->
