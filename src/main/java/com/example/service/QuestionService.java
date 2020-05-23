@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.example.entity.Person;
 import com.example.entity.Question;
 import com.example.entity.UserData;
 import com.example.repository.OrderRepository;
@@ -20,12 +21,223 @@ public class QuestionService {
         return userData;
     }
 
-    public void handleQestion(UserData userData) {
+    public Person handleQestion(UserData userData) {
+        Person person = new Person();
+        person.setUserData(userData);
         List<Question> gadjets = userData.getData().stream().filter(e -> e.getType().equals("gadjet")).collect(Collectors.toList());
         int gadjet = checkGajets(gadjets);
-        List<Question> internets = userData.getData().stream().filter(e -> e.getType().equals("gadjet")).collect(Collectors.toList());
-        int internet = checkInternet(internets);
+        person.setGadjets(gadjet);
 
+        List<Question> internets = userData.getData().stream().filter(e -> e.getType().equals("internet")).collect(Collectors.toList());
+        int internet = checkInternet(internets);
+        person.setInternet(internet);
+
+        List<Question> messengers = userData.getData().stream().filter(e -> e.getType().equals("messenger")).collect(Collectors.toList());
+        int messenger = checkMessenger(messengers);
+        person.setMessenger(messenger);
+
+        List<Question> gamings = userData.getData().stream().filter(e -> e.getType().equals("gaming")).collect(Collectors.toList());
+        int gaming = checkGaming(gamings);
+        person.setGaming(gaming);
+
+        List<Question> fisiologys = userData.getData().stream().filter(e -> e.getType().equals("fisiology")).collect(Collectors.toList());
+        int fisiology = checkFisiology(fisiologys);
+        person.setFisiology(fisiology);
+
+        return person;
+
+    }
+
+    private int checkFisiology(List<Question> fisiologys) {
+        int result = 0;
+        Question question1 = fisiologys.stream().filter(e -> e.getId().equals("1")).findAny().get();
+        if (question1.getValue().equals("2")) {
+            result += 2;
+        }
+        Question question2 = fisiologys.stream().filter(e -> e.getId().equals("2")).findAny().get();
+        Object[] arr =  ((List<Boolean>) question2.getValue()).toArray();
+        if ((Boolean) arr[0]) {
+            result += 1;
+        }
+        if ((Boolean) arr[1]) {
+            result += 1;
+        }
+        if ((Boolean) arr[2]) {
+            result += 1;
+        }
+        if ((Boolean) arr[3]) {
+            result += 2;
+        }
+        if ((Boolean) arr[4]) {
+            result += 2;
+        }
+        if ((Boolean) arr[5]) {
+            result += 1;
+        }
+        if ((Boolean) arr[6]) {
+            result += 2;
+        }
+        Question question3 = fisiologys.stream().filter(e -> e.getId().equals("3")).findAny().get();
+        Object[] arr3 =  ((List<Boolean>) question3.getValue()).toArray();
+        if ((Boolean) arr3[0]) {
+            result += 2;
+        }
+        if ((Boolean) arr3[1]) {
+            result += 2;
+        }
+        if ((Boolean) arr3[3]) {
+            result += 1;
+        }
+
+        Question question4 = fisiologys.stream().filter(e -> e.getId().equals("4")).findAny().get();
+        if (question4.getValue().equals("2")) {
+            result += 2;
+        }
+        if (question4.getValue().equals("3")) {
+            result += 2;
+        }
+        Question question5 = fisiologys.stream().filter(e -> e.getId().equals("5")).findAny().get();
+        if (question5.getValue().equals("2")) {
+            result += 1;
+        }
+        if (question5.getValue().equals("3")) {
+            result += 2;
+        }
+        Question question6 = fisiologys.stream().filter(e -> e.getId().equals("6")).findAny().get();
+        if (question6.getValue().equals("1")) {
+            result += 2;
+        }
+        if (question6.getValue().equals("2")) {
+            result += 1;
+        }
+        return result;
+    }
+
+    private int checkGaming(List<Question> gamings) {
+        int result = 0;
+        Question question1 = gamings.stream().filter(e -> e.getId().equals("1")).findAny().get();
+        if (question1.getValue().equals("2")) {
+            result += 1;
+        }
+        if (question1.getValue().equals("3")) {
+            result += 2;
+        }
+        if (question1.getValue().equals("4")) {
+            result += 2;
+        }
+        Question question2 = gamings.stream().filter(e -> e.getId().equals("2")).findAny().get();
+        if (question2.getValue().equals("1")) {
+            result += 1;
+        }
+        if (question2.getValue().equals("2")) {
+            result += 1;
+        }
+        if (question2.getValue().equals("3")) {
+            result += 2;
+        }
+
+        Question question3 = gamings.stream().filter(e -> e.getId().equals("3")).findAny().get();
+        List<String> q2 = (List<String>) question3.getValue();
+        int q2a = (int) q2.stream().filter(e -> e.equals("1")).count();
+        int q2b = (int) q2.stream().filter(e -> e.equals("2")).count();
+        result += q2a * 2 + q2b;
+
+
+        Question question4 = gamings.stream().filter(e -> e.getId().equals("4")).findAny().get();
+        if (question4.getValue().equals("1")) {
+            result += 2;
+        }
+        if (question4.getValue().equals("2")) {
+            result += 1;
+        }
+
+        Question question5 = gamings.stream().filter(e -> e.getId().equals("5")).findAny().get();
+        if (question5.getValue().equals("3")) {
+            result += 1;
+        }
+        if (question5.getValue().equals("4")) {
+            result += 2;
+        }
+
+        Question question6 = gamings.stream().filter(e -> e.getId().equals("6")).findAny().get();
+        if (question6.getValue().equals("2")) {
+            result += 1;
+        }
+        if (question6.getValue().equals("3")) {
+            result += 2;
+        }
+        if (question6.getValue().equals("4")) {
+            result += 2;
+        }
+
+        Question question7 = gamings.stream().filter(e -> e.getId().equals("7")).findAny().get();
+        if (question7.getValue().equals("1")) {
+            result += 2;
+        }
+        if (question7.getValue().equals("2")) {
+            result += 2;
+        }
+
+        Question question8 = gamings.stream().filter(e -> e.getId().equals("8")).findAny().get();
+        if (question8.getValue().equals("1")) {
+            result += 2;
+        }
+        if (question8.getValue().equals("2")) {
+            result += 1;
+        }
+
+        Question question9 = gamings.stream().filter(e -> e.getId().equals("9")).findAny().get();
+        if (question9.getValue().equals("1")) {
+            result += 2;
+        }
+        if (question9.getValue().equals("2")) {
+            result += 2;
+        }
+        if (question9.getValue().equals("4")) {
+            result += 1;
+        }
+        if (question9.getValue().equals("5")) {
+            result += 1;
+        }
+        return result;
+    }
+
+    private int checkMessenger(List<Question> messengers) {
+        int result = 0;
+        Question question2 = messengers.stream().filter(e -> e.getId().equals("2")).findAny().get();
+        if (question2.getValue().equals("2")) {
+            result += 2;
+        }
+
+        Question question3 = messengers.stream().filter(e -> e.getId().equals("3")).findAny().get();
+        if (question3.getValue().equals("1")) {
+            result += 2;
+        }
+        if (question3.getValue().equals("2")) {
+            result += 2;
+        }
+        if (question3.getValue().equals("3")) {
+            result += 1;
+        }
+
+        Question question4 = messengers.stream().filter(e -> e.getId().equals("4")).findAny().get();
+        if (question4.getValue().equals("2")) {
+            result += 1;
+        }
+        if (question4.getValue().equals("3")) {
+            result += 2;
+        }
+        if (question4.getValue().equals("4")) {
+            result += 1;
+        }
+        Question question5 = messengers.stream().filter(e -> e.getId().equals("5")).findAny().get();
+        if (question5.getValue().equals("1")) {
+            result += 2;
+        }
+        if (question5.getValue().equals("2")) {
+            result += 1;
+        }
+        return result;
     }
 
     private int checkInternet(List<Question> internets) {
@@ -52,20 +264,20 @@ public class QuestionService {
         result += q2a * 2 + q2b;
 
         Question question4 = internets.stream().filter(e -> e.getId().equals("4")).findAny().get();
-        Boolean[] arr = (Boolean[]) question4.getValue();
-        if (arr[0]) {
+        Object[] arr =  ((List<Boolean>) question4.getValue()).toArray();
+        if ((Boolean) arr[0]) {
             result += 2;
         }
-        if (arr[1]) {
+        if ((Boolean)arr[1]) {
             result += 1;
         }
-        if (arr[2]) {
+        if ((Boolean)arr[2]) {
             result += 2;
         }
-        if (arr[3]) {
+        if ((Boolean)arr[3]) {
             result += 1;
         }
-        if (arr[4]) {
+        if ((Boolean)arr[4]) {
             result += 2;
         }
         return result;
@@ -117,3 +329,4 @@ public class QuestionService {
         return result;
     }
 }
+//    Object[] arr =  ((List<Boolean>) question4.getValue()).toArray();

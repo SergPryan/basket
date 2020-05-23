@@ -50,6 +50,23 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
     $scope.fisiology.id2 = []
     $scope.fisiology.id3 = []
 
+    $scope.fisiology.id2.q1= false
+    $scope.fisiology.id2.q2= false
+    $scope.fisiology.id2.q3= false
+    $scope.fisiology.id2.q4= false
+    $scope.fisiology.id2.q5= false
+    $scope.fisiology.id2.q6= false
+    $scope.fisiology.id2.q7= false
+    $scope.fisiology.id2.q8= false
+
+    $scope.fisiology.id3.q1= false
+    $scope.fisiology.id3.q2= false
+    $scope.fisiology.id3.q3= false
+    $scope.fisiology.id3.q4= false
+    $scope.fisiology.id3.q5= false
+    $scope.fisiology.id3.q6= false
+    $scope.fisiology.id3.q7= false
+
 
     $scope.createOrder = function () {
         $scope.responses = [
