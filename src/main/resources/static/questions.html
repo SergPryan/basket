@@ -47,10 +47,10 @@
             </tr>
             <tr>
                 <td>Учебы/ Работы</td>
-                <td><input type="radio" ng-model="gadget.id2.q1"></td>
-                <td><input type="radio" ng-model="gadget.id2.q1"></td>
-                <td><input type="radio" ng-model="gadget.id2.q1"></td>
-                <td><input type="radio" ng-model="gadget.id2.q1"></td>
+                <td><input type="radio" ng-model="gadget.id2.q1" value="1"></td>
+                <td><input type="radio" ng-model="gadget.id2.q1" value="2"></td>
+                <td><input type="radio" ng-model="gadget.id2.q1" value="3"></td>
+                <td><input type="radio" ng-model="gadget.id2.q1" value="4"></td>
             </tr>
             <tr>
                 <td>Серфинг в Интернете</td>
@@ -61,73 +61,72 @@
             </tr>
             <tr>
                 <td>Мобильные игры</td>
-                <td><input type="radio" ng-model="gadget.id2.q3"></td>
-                <td><input type="radio" ng-model="gadget.id2.q3"></td>
-                <td><input type="radio" ng-model="gadget.id2.q3"></td>
-                <td><input type="radio" ng-model="gadget.id2.q3"></td>
+                <td><input type="radio" ng-model="gadget.id2.q3" value="1"></td>
+                <td><input type="radio" ng-model="gadget.id2.q3" value="2"></td>
+                <td><input type="radio" ng-model="gadget.id2.q3"value="3"></td>
+                <td><input type="radio" ng-model="gadget.id2.q3" value="4"></td>
             </tr>
             <tr>
                 <td>Компьютерные игры</td>
-                <td><input type="radio" ng-model="gadget.id2.q4"></td>
-                <td><input type="radio" ng-model="gadget.id2.q4"></td>
-                <td><input type="radio" ng-model="gadget.id2.q4"></td>
-                <td><input type="radio" ng-model="gadget.id2.q4"></td>
+                <td><input type="radio" ng-model="gadget.id2.q4" value="1"></td>
+                <td><input type="radio" ng-model="gadget.id2.q4" value="2"></td>
+                <td><input type="radio" ng-model="gadget.id2.q4" value="3"></td>
+                <td><input type="radio" ng-model="gadget.id2.q4" value="4"></td>
             </tr>
             <tr>
                 <td>Почитать электронную книгу</td>
-                <td><input type="radio" ng-model="gadget.id2.q5"></td>
-                <td><input type="radio" ng-model="gadget.id2.q5"></td>
-                <td><input type="radio" ng-model="gadget.id2.q5"></td>
-                <td><input type="radio" ng-model="gadget.id2.q5"></td>
+                <td><input type="radio" ng-model="gadget.id2.q5" value="1"></td>
+                <td><input type="radio" ng-model="gadget.id2.q5" value="2"></td>
+                <td><input type="radio" ng-model="gadget.id2.q5" value="3"></td>
+                <td><input type="radio" ng-model="gadget.id2.q5" value="4"></td>
             </tr>
             <tr>
                 <td>Посмотреть видеоблог/ кино</td>
-                <td><input type="radio" ng-model="gadget.id2.q6"></td>
-                <td><input type="radio" ng-model="gadget.id2.q6"></td>
-                <td><input type="radio" ng-model="gadget.id2.q6"></td>
-                <td><input type="radio" ng-model="gadget.id2.q6"></td>
+                <td><input type="radio" ng-model="gadget.id2.q6" value="1"></td>
+                <td><input type="radio" ng-model="gadget.id2.q6" value="2"> </td>
+                <td><input type="radio" ng-model="gadget.id2.q6" value="3"></td>
+                <td><input type="radio" ng-model="gadget.id2.q6" value="4"></td>
             </tr>
-
         </table>
     </li>
     <li>
         Берёте ли Вы телефон с собой в ванную комнату? *
         <br/>
-        <input type="checkbox" name="napravlenir"> Да<br/>
-        <input type="checkbox" name="napravlenir"> Нет<br/>
-        <input type="checkbox" name="napravlenir">Иногда<br/>
+        <input type="radio" ng-model="gadget.id3" value="1"> Да<br/>
+        <input type="radio" ng-model="gadget.id3" value="1"> Нет<br/>
+        <input type="radio" ng-model="gadget.id3" value="1">Иногда<br/>
     </li>
     <li>
         Вы проверяете соц. сети перед сном?
         <br/>
-        <input type="checkbox" name="napravlenir"> Если поступит уведомление о сообщении, конечно придется ответить, а
+        <input type="radio" ng-model="gadget.id4" value="1"> Если поступит уведомление о сообщении, конечно придется ответить, а
         так я против этого<br/>
-        <input type="checkbox" name="napravlenir"> Нет, перед сном никаких гаджетов, ведь это плохо влияет на сон<br/>
-        <input type="checkbox" name="napravlenir">Нет, перед сном никаких гаджетов, ведь это плохо влияет на сон<br/>
-        <input type="checkbox" name="napravlenir">Проверяю, а когда очнусь на часах уже будет глубокая ночь<br/>
+        <input type="radio" ng-model="gadget.id4" value="2"> Нет, перед сном никаких гаджетов, ведь это плохо влияет на сон<br/>
+        <input type="radio" ng-model="gadget.id4" value="3">Нет, перед сном никаких гаджетов, ведь это плохо влияет на сон<br/>
+        <input type="radio" ng-model="gadget.id4" value="4">Проверяю, а когда очнусь на часах уже будет глубокая ночь<br/>
     </li>
     <li>
         Вы сидите дома, листаете ленту и у Вас разрядился телефон, Ваши действия:
         <br/>
-        <input type="checkbox" name="napravlenir"> Разозлюсь, быстро поставлю на зарядку, буду ждать пока он включится и
+        <input type="radio" ng-model="gadget.id5" value="1"> Разозлюсь, быстро поставлю на зарядку, буду ждать пока он включится и
         продолжу листать ленту<br/>
-        <input type="checkbox" name="napravlenir"> Поставлю на зарядку, пойду заниматься своими делами<br/>
-        <input type="checkbox" name="napravlenir">Расстроюсь, что не дочитал(а) интересную новость/статью, поставлю на
+        <input type="radio" ng-model="gadget.id5" value="2"> Поставлю на зарядку, пойду заниматься своими делами<br/>
+        <input type="radio" ng-model="gadget.id5" value="3">Расстроюсь, что не дочитал(а) интересную новость/статью, поставлю на
         зарядку, вернусь к статье позже, если не забуду<br/>
     </li>
     <li>
         По какой причине Вы покупаете новый девайс? *
         <br/>
-        <input type="checkbox" name="napravlenir">По какой причине Вы покупаете новый девайс? *<br/>
-        <input type="checkbox" name="napravlenir"> Обычно, я самостоятельно не покупаю, мне дарят девайсы<br/>
-        <input type="checkbox" name="napravlenir">Как вышел в продажу, так сразу беру. У меня только новинки<br/>
+        <input type="radio" ng-model="gadget.id6" value="1">По какой причине Вы покупаете новый девайс? *<br/>
+        <input type="radio" ng-model="gadget.id6" value="2"> Обычно, я самостоятельно не покупаю, мне дарят девайсы<br/>
+        <input type="radio" ng-model="gadget.id6" value="3">Как вышел в продажу, так сразу беру. У меня только новинки<br/>
     </li>
     <li>
         Что Вы думаете об очках виртуальной реальности?
         <br/>
-        <input type="checkbox" name="napravlenir">Уже взял(а) себе!<br/>
-        <input type="checkbox" name="napravlenir"> Интересный гаджет, но ,говорят, еще недоработан<br/>
-        <input type="checkbox" name="napravlenir">Не вижу смысла покупать их. Можно брать в аренду, когда
+        <input type="radio" ng-model="gadget.id7" value="1">Уже взял(а) себе!<br/>
+        <input type="radio" ng-model="gadget.id7" value="2"> Интересный гаджет, но ,говорят, еще недоработан<br/>
+        <input type="radio" ng-model="gadget.id7" value="3">Не вижу смысла покупать их. Можно брать в аренду, когда
         потребуются<br/>
     </li>
 </ol>

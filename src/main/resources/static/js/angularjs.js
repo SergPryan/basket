@@ -36,6 +36,7 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
     $scope.gadget  = []
     $scope.gadget.id1  = []
     $scope.gadget.id2  = []
+    $scope.gadget.id3  = []
 
     $scope.gadget.id1.typeComputer1 = false
     $scope.gadget.id1.typeComputer2 = false
@@ -60,10 +61,40 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
                     $scope.gadget.id2.q4,
                     $scope.gadget.id2.q5,
                     $scope.gadget.id2.q6,]
+            },
+            {
+                "id": "3",
+                "value": $scope.gadget.id3
+            }
+            ,
+            {
+                "id": "4",
+                "value": $scope.gadget.id4
+            }
+            ,
+            {
+                "id": "5",
+                "value": $scope.gadget.id5
+            }
+            ,
+            {
+                "id": "6",
+                "value": $scope.gadget.id6
+            }
+            ,
+            {
+                "id": "7",
+                "value": $scope.gadget.id7
+            }
+            ,
+            {
+                "id": "3",
+                "value": $scope.gadget.id3
             }
         ];
 
-        console.log($scope.responses)
+        console.log($scope)
+        console.log($scope.gadget)
 
         var data = {"name": $scope.name, "age": $scope.age,
         "sex":$scope.sex,"napravlenie": $scope.napravlenie,
