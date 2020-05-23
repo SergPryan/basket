@@ -1,0 +1,489 @@
+<ol>
+    <li>
+        Ваше имя <input type="text" ng-model="name">
+    </li>
+
+    <li>
+        Пол <input type="radio" ng-model="sex" value="Мужской">Мужской<br/>
+        <input type="radio" ng-model="sex" value="Женский">Женский
+    </li>
+    <li>
+        Возраст <input type="text" ng-model="age">
+    </li>
+    <li>
+        В каком направлении получаете/ получили образование? *
+        <br/>
+        <input type="radio" ng-model="napravlenie" value="Экономическое">Экономическое<br/>
+        <input type="radio" ng-model="napravlenie" value="Техническое">Техническое<br/>
+        <input type="radio" ng-model="napravlenie" value="Гуманитарное">Гуманитарное<br/>
+        <input type="radio" ng-model="napravlenie">
+        Другое:<input type="text" ng-model="napravlenie">
+    </li>
+    <li>
+        Категория респондента <br/>
+        <input type="radio" ng-model="category" value="Старшеклассник"> Старшеклассник<br/>
+        <input type="radio" ng-model="category" value="Студент"> Студент<br/>
+        <input type="radio" ng-model="category" value="Имеется образование, традоустроен"> Имеется образование, традоустроен<br/>
+    </li>
+    </ol><ol>
+    <li>
+        Какой тип компьютерной техники Вы предпочитаете? (возможно несколько вариантов ответа) *
+        <br/>
+        <input type="checkbox" ng-model="gadget.id1.typeComputer1" >Персональный компьютер<br/>
+        <input type="checkbox" ng-model="gadget.id1.typeComputer2" >Ноутбук<br/>
+        <input type="checkbox" ng-model="gadget.id1.typeComputer3" >Планшет<br/>
+        <input type="checkbox" ng-model="gadget.id1.typeComputer4" >Смартфон<br/>
+    </li>
+    <li>
+        В течение дня вы проводите время (в%) за гаджетами в целях
+        <br/>
+        <table>
+            <tr>
+                <td></td>
+                <td>До 20%</td>
+                <td>От 20 до 50%</td>
+                <td>Свыше 50%</td>
+                <td>Не занимаюсь подобным в течение дня</td>
+            </tr>
+            <tr>
+                <td>Учебы/ Работы</td>
+                <td><input type="radio" ng-model="gadget.id2.q1"></td>
+                <td><input type="radio" ng-model="gadget.id2.q1"></td>
+                <td><input type="radio" ng-model="gadget.id2.q1"></td>
+                <td><input type="radio" ng-model="gadget.id2.q1"></td>
+            </tr>
+            <tr>
+                <td>Серфинг в Интернете</td>
+                <td><input type="radio" ng-model="gadget.id2.q2" value="1"></td>
+                <td><input type="radio" ng-model="gadget.id2.q2" value="2"></td>
+                <td><input type="radio" ng-model="gadget.id2.q2" value="3"></td>
+                <td><input type="radio" ng-model="gadget.id2.q2"value="4"></td>
+            </tr>
+            <tr>
+                <td>Мобильные игры</td>
+                <td><input type="radio" ng-model="gadget.id2.q3"></td>
+                <td><input type="radio" ng-model="gadget.id2.q3"></td>
+                <td><input type="radio" ng-model="gadget.id2.q3"></td>
+                <td><input type="radio" ng-model="gadget.id2.q3"></td>
+            </tr>
+            <tr>
+                <td>Компьютерные игры</td>
+                <td><input type="radio" ng-model="gadget.id2.q4"></td>
+                <td><input type="radio" ng-model="gadget.id2.q4"></td>
+                <td><input type="radio" ng-model="gadget.id2.q4"></td>
+                <td><input type="radio" ng-model="gadget.id2.q4"></td>
+            </tr>
+            <tr>
+                <td>Почитать электронную книгу</td>
+                <td><input type="radio" ng-model="gadget.id2.q5"></td>
+                <td><input type="radio" ng-model="gadget.id2.q5"></td>
+                <td><input type="radio" ng-model="gadget.id2.q5"></td>
+                <td><input type="radio" ng-model="gadget.id2.q5"></td>
+            </tr>
+            <tr>
+                <td>Посмотреть видеоблог/ кино</td>
+                <td><input type="radio" ng-model="gadget.id2.q6"></td>
+                <td><input type="radio" ng-model="gadget.id2.q6"></td>
+                <td><input type="radio" ng-model="gadget.id2.q6"></td>
+                <td><input type="radio" ng-model="gadget.id2.q6"></td>
+            </tr>
+
+        </table>
+    </li>
+    <li>
+        Берёте ли Вы телефон с собой в ванную комнату? *
+        <br/>
+        <input type="checkbox" name="napravlenir"> Да<br/>
+        <input type="checkbox" name="napravlenir"> Нет<br/>
+        <input type="checkbox" name="napravlenir">Иногда<br/>
+    </li>
+    <li>
+        Вы проверяете соц. сети перед сном?
+        <br/>
+        <input type="checkbox" name="napravlenir"> Если поступит уведомление о сообщении, конечно придется ответить, а
+        так я против этого<br/>
+        <input type="checkbox" name="napravlenir"> Нет, перед сном никаких гаджетов, ведь это плохо влияет на сон<br/>
+        <input type="checkbox" name="napravlenir">Нет, перед сном никаких гаджетов, ведь это плохо влияет на сон<br/>
+        <input type="checkbox" name="napravlenir">Проверяю, а когда очнусь на часах уже будет глубокая ночь<br/>
+    </li>
+    <li>
+        Вы сидите дома, листаете ленту и у Вас разрядился телефон, Ваши действия:
+        <br/>
+        <input type="checkbox" name="napravlenir"> Разозлюсь, быстро поставлю на зарядку, буду ждать пока он включится и
+        продолжу листать ленту<br/>
+        <input type="checkbox" name="napravlenir"> Поставлю на зарядку, пойду заниматься своими делами<br/>
+        <input type="checkbox" name="napravlenir">Расстроюсь, что не дочитал(а) интересную новость/статью, поставлю на
+        зарядку, вернусь к статье позже, если не забуду<br/>
+    </li>
+    <li>
+        По какой причине Вы покупаете новый девайс? *
+        <br/>
+        <input type="checkbox" name="napravlenir">По какой причине Вы покупаете новый девайс? *<br/>
+        <input type="checkbox" name="napravlenir"> Обычно, я самостоятельно не покупаю, мне дарят девайсы<br/>
+        <input type="checkbox" name="napravlenir">Как вышел в продажу, так сразу беру. У меня только новинки<br/>
+    </li>
+    <li>
+        Что Вы думаете об очках виртуальной реальности?
+        <br/>
+        <input type="checkbox" name="napravlenir">Уже взял(а) себе!<br/>
+        <input type="checkbox" name="napravlenir"> Интересный гаджет, но ,говорят, еще недоработан<br/>
+        <input type="checkbox" name="napravlenir">Не вижу смысла покупать их. Можно брать в аренду, когда
+        потребуются<br/>
+    </li>
+</ol>
+<ol>
+    <li>
+        Как вы предпочитаете связываться с другими людьми по важному для Вас делу? *
+        <br/>
+        <input type="checkbox" name="napravlenir">Через мессенджеры/ Соц. сети<br/>
+        <input type="checkbox" name="napravlenir"> Телефонный звонок<br/>
+        <input type="checkbox" name="napravlenir">Видеозвонок<br/>
+    </li>
+
+    <li>
+        С какой периодичностью Вы проверяете свои социальные сети (Instagram, VK, Facebook, Twitter)?
+        <br/>
+        <input type="checkbox" name="napravlenir">От 10 до 20 минут<br/>
+        <input type="checkbox" name="napravlenir"> От 1 до 3 часов<br/>
+        <input type="checkbox" name="napravlenir">Два раза в день и реже<br/>
+    </li>
+
+
+    <li>
+        Пожалуйста, укажите в каких целях Вы чаще всего пользуетесь интернетом? (ответ "Часто" подразумевает, что 70% и
+        более всех интернет-запросов относятся к указанной цели; ответ "Иногда" - от 40% до 70%; Ответ "Редко" до 40%).
+        <br/>
+        <table>
+            <tr>
+                <td></td>
+                <td>Часто</td>
+                <td>Иногда</td>
+                <td>Редко</td>
+            </tr>
+            <tr>
+                <td>Учебы/ Работы</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+            <tr>
+                <td>Просмотр новостных лент</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+            <tr>
+                <td>Просмотр видеоблогов</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+            <tr>
+                <td>Развлечения (кино,игры)</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+            <tr>
+                <td>Для общения через мессенджеры и соц.сети</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+            <tr>
+                <td>Позновательных (чтение худ. литературы, увлечение искусством и т.д.)</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+        </table>
+    </li>
+
+    <li>
+        Пожалуйста, выберите несколько ответов на вопрос из предложенных вариантов: Если во время лекции/ работы Вам
+        стало скучно, то Вы...
+        <br/>
+        <input type="checkbox" name="napravlenir">Полистаете новостную ленту<br/>
+        <input type="checkbox" name="napravlenir"> Станете с кем-либо переписываться в соц.сетях/ мессенджерах<br/>
+        <input type="checkbox" name="napravlenir">Откроете Instagram<br/>
+        <input type="checkbox" name="napravlenir">Посетите сообщества в соц. сети<br/>
+        <input type="checkbox" name="napravlenir">Поиграете в мобильные игры<br/>
+        <input type="checkbox" name="napravlenir">Подумаете о личном<br/>
+        <input type="checkbox" name="napravlenir">Направите взгляд в одну точку и продолжите скучать, пока Вас не
+        окликнут<br/>
+    </li>
+
+    <li>
+        Через какой мессенджер Вы предпочитаете общаться?
+        <br/>
+        <input type="radio" name="napravlenir">WhatsApp<br/>
+        <input type="radio" name="napravlenir">Telegram<br/>
+        <input type="radio" name="napravlenir">Viber<br/>
+    </li>
+
+    <li>
+        В ваших диалогах с людьми в большей степени присутствует...
+        <br/>
+        <input type="radio" name="napravlenir">Конструктивное общение (обсуждение каких-либо событий, вопросов)<br/>
+        <input type="radio" name="napravlenir">Видеоматериалы и изображения разного характера<br/>
+    </li>
+
+    <li>
+        Прочитав шокирующую новость в интернете, Вы..
+        <br/>
+        <input type="radio" name="napravlenir">Тут же поделитесь ею в мессенджере<br/>
+        <input type="radio" name="napravlenir">Проверите на достоверность эту новость, а затем перешлете ее другу<br/>
+        <input type="radio" name="napravlenir">Позвоните другу/коллеге и в разговоре обсудите новость<br/>
+        <input type="radio" name="napravlenir">Если не забудете, расскажете при встрече<br/>
+    </li>
+
+    <li>
+        Представьте ситуацию, когда у Вас много работы и отвлекаться нежелательно, Вам поступают сообщения с
+        видео/аудиоматериалами и изображениями. Ваши действия?
+        <br/>
+        <input type="radio" name="napravlenir">Постараетесь не забыть прочитать сообщение позже, когда немного
+        освободитесь<br/>
+        <input type="radio" name="napravlenir">Прочитаете, не посмотрев содержимое и не ответите<br/>
+        <input type="radio" name="napravlenir">Прочитаете, посмотрите и ответите<br/>
+        <input type="radio" name="napravlenir">Проверите, что в сообщении видео и изображение и решите оставить
+        сообщение непрочитанным<br/>
+    </li>
+
+    <li>
+        Для обсуждения деловых вопросов с условным клиентом лучше будет... (Пожалуйста, выберите не больше 2х
+        вариантов).
+        <br/>
+        <input type="radio" name="napravlenir"> Воспользоваться видео-звонком в мессенджере<br/>
+        <input type="radio" name="napravlenir">Переписываться в чате мессенджера<br/>
+        <input type="radio" name="napravlenir">Воспользоваться телефонным звонком<br/>
+        <input type="radio" name="napravlenir">Встретиться лично<br/>
+    </li>
+
+    <li>
+        Как часто Вы играете в компьютерные игры?
+        <br/>
+        <input type="radio" name="napravlenir"> Раз в неделю и реже (не играю)<br/>
+        <input type="radio" name="napravlenir">Два-три раза в неделю<br/>
+        <input type="radio" name="napravlenir">Ежедневно, после работы<br/>
+        <input type="radio" name="napravlenir">Ежедневно, с небольшими перерывами<br/>
+    </li>
+
+    <li>
+        Сколько времени в день Вы готовы тратить на компьютерные игры?
+        <br/>
+        <input type="radio" name="napravlenir"> 30 минут- час<br/>
+        <input type="radio" name="napravlenir">От 2 до 3 часов<br/>
+        <input type="radio" name="napravlenir">Больше 3 часов<br/>
+        <input type="radio" name="napravlenir">Не играю<br/>
+    </li>
+
+
+    <li>
+        Пожалуйста, выберите жанр игр, в соответствии со степенью интереса
+        <br/>
+        <table>
+            <tr>
+                <td></td>
+                <td>Интересны</td>
+                <td>Могу иногда поиграть</td>
+                <td>Очень редко в такое играю</td>
+                <td>Вообще не интересует</td>
+            </tr>
+            <tr>
+                <td>Аркадные</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+            <tr>
+                <td>Ролевые</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+            <tr>
+                <td>Стратегии</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+            <tr>
+                <td>Логические</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+            <tr>
+                <td>Квесты</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+            <tr>
+                <td>Симулятор</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+
+        </table>
+    </li>
+
+    <li>
+        Как часто с Вами бывает так, что Вы не замечаете, как быстро проходит время в процессе игры?
+        <br/>
+        <input type="radio" name="napravlenir"> Каждый раз, когда играю в новую интересную игру<br/>
+        <input type="radio" name="napravlenir">Стараюсь играть ограниченное время, но если игра захватывает, могу
+        перестать контролировать время<br/>
+        <input type="radio" name="napravlenir">Играю в строго отведенное время, не выходя за его рамки<br/>
+    </li>
+
+    <li>
+        Представьте ситуацию: У Вас очень напряженная игровая онлайн-сессия в команде, и вдруг, Вас позвали гулять или
+        попросили сходить в магазин. Ваши действия:
+        <br/>
+        <input type="radio" name="napravlenir">Доиграете текущую игровую сессию и сходите погулять/ в магазин<br/>
+        <input type="radio" name="napravlenir">Сразу же после просьбы начнете собираться в магазин/ на прогулку<br/>
+        <input type="radio" name="napravlenir">Попросите, что бы Вас не отвлекали и подождали пока Вы закончите<br/>
+        <input type="radio" name="napravlenir">Какая прогулка, тут дела по-важнее!<br/>
+    </li>
+
+    <li>
+        В процессе игры Вас отвлекли по какому-либо поводу и Вы проиграли, как Вы, обычно, реагируете на подобное?
+        <br/>
+        <table>
+            <tr>
+                <td></td>
+                <td>Чаще всего так и реагирую</td>
+                <td>Редко так реагирую</td>
+                <td>Никогда так не реагирую</td>
+            </tr>
+            <tr>
+                <td>Ничего страшного, попробую сначала</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+            <tr>
+                <td>Рассержусь: этот повод не мог подождать?!</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+            <tr>
+                <td>Неосознанно начну кричать и обвинять того, кто отвлек</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+            <tr>
+                <td>Специально, повышенным тоном попрошу не лезть во время игры</td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+                <td><input type="radio" name="napravlenir"></td>
+            </tr>
+
+        </table>
+    </li>
+
+    <li>
+        По- вашему мнению, нормально ли весь выходной просидеть за компьютерной игрой ?
+        <br/>
+        <input type="radio" name="napravlenir">Да, почему бы и нет. Я всю неделю работал, имею право так отдохнуть<br/>
+        <input type="radio" name="napravlenir">Вполне, мне в выходной делать нечего. По дому все и без меня делают, а
+        смотреть телевизор или читать мне не особо интересно<br/>
+        <input type="radio" name="napravlenir">Нет, можно поиграть пару часов, но потом заняться более важными
+        делами<br/>
+        <input type="radio" name="napravlenir">У меня много дел в выходные и мне не до игр<br/>
+    </li>
+
+    <li>
+        Согласны ли Вы со следующими утверждениями?
+        <br/>
+        <input type="radio" name="napravlenir">VR это здорово! Обычный игровой процесс уже приелся!<br/>
+        <input type="radio" name="napravlenir">Мне нравится, особенно, когда играешь в хоррор, щекочет нервы!<br/>
+        <input type="radio" name="napravlenir">Интересный девайс, но не более чем на пару раз<br/>
+        <input type="radio" name="napravlenir">С их помощью можно виртуально путешествовать куда угодно, это же отлично!<br/>
+        <input type="radio" name="napravlenir">Мне нравится играть через них, но только не в хоррор! Мои нервы мне
+        дороже, чем острые ощущения<br/>
+        <input type="radio" name="napravlenir">Против VR, ведь это плохо сказывается на подсознании и здоровье в
+        целом<br/>
+    </li>
+
+    <li>
+        Вы ощущаете оживление, удовольствие, удовлетворение или облегчение, находясь за компьютером (в сети)?
+        <br/>
+        <input type="radio" name="napravlenir">После рабочего дня, я с удовольствием сяду за компьютер<br/>
+        <input type="radio" name="napravlenir">После рабочего дня у меня нет никакого желания садиться за компьютер.
+        Лучше чем-нибудь другим займусь<br/>
+        <input type="radio" name="napravlenir">Чаще всего я удовлетворен(а) тем, что сижу за компьютером (в сети)<br/>
+    </li>
+
+    <li>
+        Пожалуйста, выберите пункты, которые Вам соответствуют: *
+        <br/>
+        <input type="radio" name="napravlenir">Я часто испытываю сухость в глазах, если смотрю в монитор или пользуюсь
+        разными гаджетами<br/>
+        <input type="radio" name="napravlenir">У меня начинает болеть спина, когда сижу за компьютером<br/>
+        <input type="radio" name="napravlenir">Я люблю лежать на диване с ноутбуком, ведь это удобно<br/>
+        <input type="radio" name="napravlenir">Я наблюдаю ухудшение концентрации в учебе/ работе после перерыва на соц.
+        сети или игры<br/>
+        <input type="radio" name="napravlenir">Замечаю, что я становлюсь раздражительным, когда сижу в Интернете или
+        нахожусь в игровом процессе<br/>
+        <input type="radio" name="napravlenir">Бывает, что я психую, когда не получается пройти миссию в игре<br/>
+
+        <input type="radio" name="napravlenir">Моё близкое окружение часто бывает недовольно тем, что пренебрегаю делами
+        и общением с ними, в угоду Интернету, гаджетам и играм<br/>
+        <input type="radio" name="napravlenir">Ничего из вышеперечисленного ко мне не относится<br/>
+    </li>
+
+    <li>
+        В сложной жизненной ситуации Вы доверитесь советам (возможно несколько вариантов ответа): *
+        <br/>
+        <input type="radio" name="napravlenir">Интернета<br/>
+        <input type="radio" name="napravlenir">Блогера<br/>
+        <input type="radio" name="napravlenir">Друзей, окружающих Вас в реальной жизни и родных<br/>
+        <input type="radio" name="napravlenir"> Виртуальных друзей<br/>
+        <input type="radio" name="napravlenir">Специалиста, обратитесь к психологу<br/>
+        <input type="radio" name="napravlenir">Бывает, что я психую, когда не получается пройти миссию в игре<br/>
+        <input type="radio" name="napravlenir">Предпочту никого не слушать и решить проблему самостоятельно<br/>
+    </li>
+
+    <li>
+        Есть ли у Вас виртуальные друзья и как Вам комфортнее общаться (виртуально или реально)?
+        <br/>
+        <input type="radio" name="napravlenir">Есть, в реальности не встречались ни разу, но мы очень хорошо ладим, у
+        нас много общего. Но все равно предпочту общение в живую<br/>
+        <input type="radio" name="napravlenir">Много виртуальных друзей, мне гораздо интереснее общение с ними, нежели с
+        реальными знакомыми. Предпочту виртуальное общение<br/>
+        <input type="radio" name="napravlenir">Все мои друзья виртуальные<br/>
+        <input type="radio" name="napravlenir"> Не имею виртуальных друзей. Живое общение куда лучше<br/>
+    </li>
+
+    <li>
+        Что вы думаете по поводу знакомств в интернете?
+        <br/>
+        <input type="radio" name="napravlenir">Самые лучшие знакомства-случайные или встречи вживую<br/>
+        <input type="radio" name="napravlenir">Не имею ничего против<br/>
+        <input type="radio" name="napravlenir">Только так и знакомлюсь<br/>
+    </li>
+
+    <li>
+        Согласны ли Вы со следующим утверждением: Считаю, что использование гаджетов осуждают те, кто не находятся в
+        «потоке», технически не продвинуты, или претендуют на оригинальность, и хотят казаться выше.
+        <br/>
+        <input type="radio" name="napravlenir">Полностью согласен<br/>
+        <input type="radio" name="napravlenir">Согласен частично<br/>
+        <input type="radio" name="napravlenir">В корне не согласен<br/>
+    </li>
+</ol>
+
+<br/>
+<button ng-click="createOrder()">Сохранить результат</button>

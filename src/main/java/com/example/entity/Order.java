@@ -1,59 +1,70 @@
 package com.example.entity;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Order {
+    private String name;
+    private String age;
+    private String sex;
+    private String napravlenie;
+    private String category;
+    private Object data;
 
-    private Long id;
-    private String fullName;
-    private String telephone;
-
-    public Order() {
+    public String getName() {
+        return name;
     }
 
-    @JsonCreator
-    public Order(@JsonProperty("fullName") String fullName,@JsonProperty("telephone") String telephone) {
-        this.fullName = fullName;
-        this.telephone = telephone;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getAge() {
+        return age;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setAge(String age) {
+        this.age = age;
     }
 
-    public String getTelephone() {
-        return telephone;
+    public String getSex() {
+        return sex;
     }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
-    @JsonIgnore
-    private List<Product> list= new ArrayList<>();
-
-    public List<Product> getList() {
-        return list;
+    public String getNapravlenie() {
+        return napravlenie;
     }
 
-    public void setList(List<Product> list) {
-        this.list = list;
+    public void setNapravlenie(String napravlenie) {
+        this.napravlenie = napravlenie;
     }
 
-    public Long getId() {
-        return id;
+    public String getCategory() {
+        return category;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", sex='" + sex + '\'' +
+                ", napravlenie='" + napravlenie + '\'' +
+                ", category='" + category + '\'' +
+                ", data=" + data +
+                '}';
     }
 }

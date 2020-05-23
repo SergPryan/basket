@@ -1,45 +1,75 @@
-app = angular.module('basketApp',['ngRoute'])
+app = angular.module('basketApp', ['ngRoute'])
 
-app.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/basket', {
             templateUrl: 'basket.html',
             controller: 'appCtrl'
         })
-        .when('/list_product', {
-            templateUrl: 'list_product.html',
+        .when('/questions', {
+            templateUrl: 'questions.html',
             controller: 'appCtrl'
         })
-        .otherwise({redirectTo:'/'});
+        .otherwise({redirectTo: '/'});
 }]);
 
-app.controller('appCtrl',function ($scope,$http,$filter) {
-    $http.get('/product/all').then(function (response) {
-        $scope.products = response.data
-    })
-    $http.get('/basket/all').then(function (response) {
-        $scope.productsInBasket = response.data
-    })
-    $scope.addToBasket = function (index) {
-        $http.post('/basket/add',$scope.products[index])
-        $http.get('/basket/all').then(function (response) {
-            $scope.productsInBasket = response.data
-        })
+app.controller('appCtrl', function ($scope, $http, $filter) {
+    // $http.get('/product/all').then(function (response) {
+    //     $scope.products = response.data
+    // })
+    // $http.get('/basket/all').then(function (response) {
+    //     $scope.productsInBasket = response.data
+    // })
+    // $scope.addToBasket = function (index) {
+    //     $http.post('/basket/add',$scope.products[index])
+    //     $http.get('/basket/all').then(function (response) {
+    //         $scope.productsInBasket = response.data
+    //     })
+    //
+    // }
+    // $scope.deleteFromBasket = function (index) {
+    //     var idElement = $scope.productsInBasket[index]['id']
+    //     $http.delete('/basket/delete/'+idElement)
+    //     $scope.productsInBasket.splice(index,1)
+    //
+    // }
+    $scope.gadget  = []
+    $scope.gadget.id1  = []
+    $scope.gadget.id2  = []
 
-    }
-    $scope.deleteFromBasket = function (index) {
-        var idElement = $scope.productsInBasket[index]['id']
-        $http.delete('/basket/delete/'+idElement)
-        $scope.productsInBasket.splice(index,1)
+    $scope.gadget.id1.typeComputer1 = false
+    $scope.gadget.id1.typeComputer2 = false
+    $scope.gadget.id1.typeComputer3 = false
+    $scope.gadget.id1.typeComputer4 = false
 
-    }
+
     $scope.createOrder = function () {
-        var data = { "fullName": $scope.fullName,
-        "telephone":$scope.telephone
+        $scope.responses = [
+            {
+                "id": "1",
+                "value": [$scope.gadget.id1.typeComputer1,
+                    $scope.gadget.id1.typeComputer2,
+                    $scope.gadget.id1.typeComputer3
+                ,$scope.gadget.id1.typeComputer4]
+            },
+            {
+                "id": "2",
+                "value": [$scope.gadget.id2.q1,
+                    $scope.gadget.id2.q2,
+                    $scope.gadget.id2.q3,
+                    $scope.gadget.id2.q4,
+                    $scope.gadget.id2.q5,
+                    $scope.gadget.id2.q6,]
+            }
+        ];
+
+        console.log($scope.responses)
+
+        var data = {"name": $scope.name, "age": $scope.age,
+        "sex":$scope.sex,"napravlenie": $scope.napravlenie,
+            "category": $scope.category,
+            "data": $scope.responses
         }
-        $scope.fullName =''
-        $scope.telephone = ''
-        $scope.productsInBasket = []
-        $http.post('/basket/create',data)
+        $http.post('/question/create', data)
     }
 });
