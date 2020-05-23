@@ -34,14 +34,25 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
     //
     // }
     $scope.gadget  = []
+    $scope.internet  = []
     $scope.gadget.id1  = []
     $scope.gadget.id2  = []
-    $scope.gadget.id3  = []
+    $scope.gadget.id4  = []
+
+    $scope.internet.id4 = []
 
     $scope.gadget.id1.typeComputer1 = false
     $scope.gadget.id1.typeComputer2 = false
     $scope.gadget.id1.typeComputer3 = false
     $scope.gadget.id1.typeComputer4 = false
+
+    $scope.internet.id4.boring1 = false
+    $scope.internet.id4.boring2 = false
+    $scope.internet.id4.boring3 = false
+    $scope.internet.id4.boring4 = false
+    $scope.internet.id4.boring5 = false
+    $scope.internet.id4.boring6 = false
+    $scope.internet.id4.boring7 = false
 
 
     $scope.createOrder = function () {
@@ -85,11 +96,6 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
             {
                 "id": "7",
                 "value": $scope.gadget.id7
-            }
-            ,
-            {
-                "id": "3",
-                "value": $scope.gadget.id3
             }
         ];
 
