@@ -4,7 +4,7 @@ package com.example.entity;
 public class Question {
     private String id;
     private String type;
-    private Object date;
+    private Object value;
 
     public String getId() {
         return id;
@@ -22,12 +22,12 @@ public class Question {
         this.type = type;
     }
 
-    public Object getDate() {
-        return date;
+    public Object getValue() {
+        return value;
     }
 
-    public void setDate(Object date) {
-        this.date = date;
+    public void setValue(Object value) {
+        this.value = value;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class Question {
         return "Question{" +
                 "id='" + id + '\'' +
                 ", type='" + type + '\'' +
-                ", date=" + date +
+                ", value=" + value +
                 '}';
     }
 }

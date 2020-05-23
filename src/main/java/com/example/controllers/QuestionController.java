@@ -1,7 +1,6 @@
 package com.example.controllers;
 
-import com.example.commons.Utils;
-import com.example.entity.Order;
+import com.example.entity.UserData;
 import com.example.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -49,16 +48,16 @@ public class QuestionController {
 //    }
 
     @PostMapping("/create")
-    public ResponseEntity createOrder(HttpServletRequest request, @RequestBody Order order){
+    public ResponseEntity createOrder(HttpServletRequest request, @RequestBody UserData userData){
 //        order.setList(Utils.getOrderInSession(request).getList());
 //        if(order.getList()==null){
 //            return new ResponseEntity(HttpStatus.BAD_REQUEST);
 //        }
 //        questionService.createOrder(order);
 //        order.getList().clear();
-        System.out.println(order);
+        System.out.println(userData);
 
-        questionService.handleQestion(order);
+        questionService.handleQestion(userData);
         return new ResponseEntity(HttpStatus.OK);
 
     }

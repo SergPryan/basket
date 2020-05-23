@@ -2,10 +2,6 @@ app = angular.module('basketApp', ['ngRoute'])
 
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-        .when('/basket', {
-            templateUrl: 'basket.html',
-            controller: 'appCtrl'
-        })
         .when('/questions', {
             templateUrl: 'questions.html',
             controller: 'appCtrl'
@@ -151,12 +147,12 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
             }, {
                 "id": "3",
                 "type": "gaming",
-                "value": [$scope.gaming.id4.q1,
-                    $scope.gaming.id4.q2,
-                    $scope.gaming.id4.q3,
-                    $scope.gaming.id4.q4,
-                    $scope.gaming.id4.q5,
-                    $scope.gaming.id4.q6]
+                "value": [$scope.gaming.id3.q1,
+                    $scope.gaming.id3.q2,
+                    $scope.gaming.id3.q3,
+                    $scope.gaming.id3.q4,
+                    $scope.gaming.id3.q5,
+                    $scope.gaming.id3.q6]
             }, {
                 "id": "4",
                 "type": "gaming",

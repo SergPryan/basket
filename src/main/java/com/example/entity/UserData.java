@@ -2,7 +2,7 @@ package com.example.entity;
 
 import java.util.List;
 
-public class Order {
+public class UserData {
     private String name;
     private String age;
     private String sex;
