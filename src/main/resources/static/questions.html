@@ -1,3 +1,4 @@
+Уважаемый респондент, пожалуйста, ответьте на предлагаемые вопросы. Результаты тестирования будут использованы только в научно-исследовательских целях. Данный опрос анонимный.
 <ol>
     <li>
         Ваше имя <input type="text" ng-model="name">
@@ -21,12 +22,13 @@
     </li>
     <li>
         Категория респондента <br/>
-        <input type="radio" ng-model="category" value="Старшеклассник"> Старшеклассник<br/>
-        <input type="radio" ng-model="category" value="Студент"> Студент<br/>
-        <input type="radio" ng-model="category" value="Имеется образование, традоустроен"> Имеется образование,
-        традоустроен<br/>
+        <input type="radio" ng-model="category" value="1"> Старшеклассник<br/>
+        <input type="radio" ng-model="category" value="2"> Студент<br/>
+        <input type="radio" ng-model="category" value="3"> Имеется образование,
+        трудоустроен<br/>
     </li>
 </ol>
+<h1>Использование гаджетов</h1>
 <ol>
     <li>
         Какой тип компьютерной техники Вы предпочитаете? (возможно несколько вариантов ответа) *
@@ -95,8 +97,8 @@
         Берёте ли Вы телефон с собой в ванную комнату? *
         <br/>
         <input type="radio" ng-model="gadget.id3" value="1"> Да<br/>
-        <input type="radio" ng-model="gadget.id3" value="1"> Нет<br/>
-        <input type="radio" ng-model="gadget.id3" value="1">Иногда<br/>
+        <input type="radio" ng-model="gadget.id3" value="2"> Нет<br/>
+        <input type="radio" ng-model="gadget.id3" value="3">Иногда<br/>
     </li>
     <li>
         Вы проверяете соц. сети перед сном?
@@ -139,21 +141,23 @@
         потребуются<br/>
     </li>
 </ol>
+<h1>Использование интернета</h1>
+В данном разделе все вопросы касаются использования интернета посредством смартфонов, т.к. это самый популярный и необходимый гаджет.
 <ol>
     <li>
         Как вы предпочитаете связываться с другими людьми по важному для Вас делу? *
         <br/>
-        <input type="radio" name="internet.id1" value="1">Через мессенджеры/ Соц. сети<br/>
-        <input type="radio" name="internet.id1" value="2"> Телефонный звонок<br/>
-        <input type="radio" name="internet.id1" value="3">Видеозвонок<br/>
+        <input type="radio" ng-model="internet.id1" value="1">Через мессенджеры/ Соц. сети<br/>
+        <input type="radio" ng-model="internet.id1" value="2"> Телефонный звонок<br/>
+        <input type="radio" ng-model="internet.id1" value="3">Видеозвонок<br/>
     </li>
 
     <li>
         С какой периодичностью Вы проверяете свои социальные сети (Instagram, VK, Facebook, Twitter)?
         <br/>
-        <input type="checkbox" name="internet.id2" value="1">От 10 до 20 минут<br/>
-        <input type="checkbox" name="internet.id2" value="2"> От 1 до 3 часов<br/>
-        <input type="checkbox" name="internet.id2" value="3">Два раза в день и реже<br/>
+        <input type="radio" ng-model="internet.id2" value="1">От 10 до 20 минут<br/>
+        <input type="radio" ng-model="internet.id2" value="2"> От 1 до 3 часов<br/>
+        <input type="radio" ng-model="internet.id2" value="3">Два раза в день и реже<br/>
     </li>
 
 
@@ -211,14 +215,14 @@
         Пожалуйста, выберите несколько ответов на вопрос из предложенных вариантов: Если во время лекции/ работы Вам
         стало скучно, то Вы...
         <br/>
-        <input type="checkbox" ng-model="internet.id4.boring1">Полистаете новостную ленту<br/>
-        <input type="checkbox" ng-model="internet.id4.boring2"> Станете с кем-либо переписываться в соц.сетях/
+        <input type="checkbox" ng-model="internet.id4.q1">Полистаете новостную ленту<br/>
+        <input type="checkbox" ng-model="internet.id4.q2"> Станете с кем-либо переписываться в соц.сетях/
         мессенджерах<br/>
-        <input type="checkbox" ng-model="internet.id4.boring3">Откроете Instagram<br/>
-        <input type="checkbox" ng-model="internet.id4.boring4">Посетите сообщества в соц. сети<br/>
-        <input type="checkbox" ng-model="internet.id4.boring5">Поиграете в мобильные игры<br/>
-        <input type="checkbox" ng-model="internet.id4.boring6">Подумаете о личном<br/>
-        <input type="checkbox" ng-model="internet.id4.boring7">Направите взгляд в одну точку и продолжите скучать, пока
+        <input type="checkbox" ng-model="internet.id4.q3">Откроете Instagram<br/>
+        <input type="checkbox" ng-model="internet.id4.q4">Посетите сообщества в соц. сети<br/>
+        <input type="checkbox" ng-model="internet.id4.q5">Поиграете в мобильные игры<br/>
+        <input type="checkbox" ng-model="internet.id4.q6">Подумаете о личном<br/>
+        <input type="checkbox" ng-model="internet.id4.q7">Направите взгляд в одну точку и продолжите скучать, пока
         Вас не
         окликнут<br/>
     </li>
@@ -274,10 +278,10 @@
         Для обсуждения деловых вопросов с условным клиентом лучше будет... (Пожалуйста, выберите не больше 2х
         вариантов).
         <br/>
-        <input type="checkbox" ng-model="internet.id4.boring7"> Воспользоваться видео-звонком в мессенджере<br/>
-        <input type="checkbox" ng-model="internet.id4.boring7">Переписываться в чате мессенджера<br/>
-        <input type="checkbox" ng-model="internet.id4.boring7">Воспользоваться телефонным звонком<br/>
-        <input type="checkbox" ng-model="internet.id4.boring7">Встретиться лично<br/>
+        <input type="checkbox" ng-model="messenger.id5.q1"> Воспользоваться видео-звонком в мессенджере<br/>
+        <input type="checkbox" ng-model="messenger.id5.q2">Переписываться в чате мессенджера<br/>
+        <input type="checkbox" ng-model="messenger.id5.q3">Воспользоваться телефонным звонком<br/>
+        <input type="checkbox" ng-model="messenger.id5.q4">Встретиться лично<br/>
     </li>
 
 </ol>
@@ -396,28 +400,27 @@
             </tr>
             <tr>
                 <td>Ничего страшного, попробую сначала</td>
-                <td><input type="radio" ng-model="gaming.id5.q1" value="1"></td>
-                <td><input type="radio" ng-model="gaming.id5.q1" value="2"></td>
-                <td><input type="radio" ng-model="gaming.id5.q1" value="3"></td>
+                <td><input type="radio" ng-model="gaming.id6.q1" value="1"></td>
+                <td><input type="radio" ng-model="gaming.id6.q1" value="2"></td>
+                <td><input type="radio" ng-model="gaming.id6.q1" value="3"></td>
             </tr>
             <tr>
                 <td>Рассержусь: этот повод не мог подождать?!</td>
-                <td><input type="radio" ng-model="gaming.id5.q2" value="1"></td>
-                <td><input type="radio" ng-model="gaming.id5.q2" value="2"></td>
-                <td><input type="radio" ng-model="gaming.id5.q2" value="3"></td>
+                <td><input type="radio" ng-model="gaming.id6.q2" value="1"></td>
+                <td><input type="radio" ng-model="gaming.id6.q2" value="2"></td>
+                <td><input type="radio" ng-model="gaming.id6.q2" value="3"></td>
             </tr>
             <tr>
                 <td>Неосознанно начну кричать и обвинять того, кто отвлек</td>
-                <td><input type="radio" ng-model="gaming.id5.q3" value="1"></td>
-                <td><input type="radio" ng-model="gaming.id5.q3" value="2"></td>
-                <td><input type="radio" ng-model="gaming.id5.q3" value="3"></td>
-                <td><input type="radio" ng-model="gaming.id5.q3" value="4"></td>
+                <td><input type="radio" ng-model="gaming.id6.q3" value="1"></td>
+                <td><input type="radio" ng-model="gaming.id6.q3" value="2"></td>
+                <td><input type="radio" ng-model="gaming.id6.q3" value="3"></td>
             </tr>
             <tr>
                 <td>Специально, повышенным тоном попрошу не лезть во время игры</td>
-                <td><input type="radio" ng-model="gaming.id5.q4" value="1"></td>
-                <td><input type="radio" ng-model="gaming.id5.q4" value="2"></td>
-                <td><input type="radio" ng-model="gaming.id5.q4" value="3"></td>
+                <td><input type="radio" ng-model="gaming.id6.q4" value="1"></td>
+                <td><input type="radio" ng-model="gaming.id6.q4" value="2"></td>
+                <td><input type="radio" ng-model="gaming.id6.q4" value="3"></td>
             </tr>
 
         </table>
@@ -426,15 +429,15 @@
     <li>
         По- вашему мнению, нормально ли весь выходной просидеть за компьютерной игрой ?
         <br/>
-        <input type="radio" ng-model="gaming.id6" value="1">Да, почему бы и нет. Я всю неделю работал, имею право так
+        <input type="radio" ng-model="gaming.id7" value="1">Да, почему бы и нет. Я всю неделю работал, имею право так
         отдохнуть<br/>
-        <input type="radio" ng-model="gaming.id6" value="2">Вполне, мне в выходной делать нечего. По дому все и без меня
+        <input type="radio" ng-model="gaming.id7" value="2">Вполне, мне в выходной делать нечего. По дому все и без меня
         делают, а
         смотреть телевизор или читать мне не особо интересно<br/>
-        <input type="radio" ng-model="gaming.id6" value="3">Нет, можно поиграть пару часов, но потом заняться более
+        <input type="radio" ng-model="gaming.id7" value="3">Нет, можно поиграть пару часов, но потом заняться более
         важными
         делами<br/>
-        <input type="radio" ng-model="gaming.id6" value="4">У меня много дел в выходные и мне не до игр<br/>
+        <input type="radio" ng-model="gaming.id7" value="4">У меня много дел в выходные и мне не до игр<br/>
     </li>
 
     <li>
@@ -442,26 +445,26 @@
         <br/>
         <input type="radio" ng-model="gaming.id8" value="1">Да, почему бы и нет. Я всю неделю работал, имею право так
         отдохнуть<br/>
-        <input type="radio" ng-model="gaming.id8" value="1">Вполне, мне в выходной делать нечего. По дому все и без меня
+        <input type="radio" ng-model="gaming.id8" value="2">Вполне, мне в выходной делать нечего. По дому все и без меня
         делают, а
         смотреть телевизор или читать мне не особо интересно<br/>
-        <input type="radio" ng-model="gaming.id8" value="1">Нет, можно поиграть пару часов, но потом заняться более
+        <input type="radio" ng-model="gaming.id8" value="3">Нет, можно поиграть пару часов, но потом заняться более
         важными
         делами<br/>
-        <input type="radio" ng-model="gaming.id8" value="1">У меня много дел в выходные и мне не до игр<br/>
+        <input type="radio" ng-model="gaming.id8" value="4">У меня много дел в выходные и мне не до игр<br/>
     </li>
 
     <li>
         Согласны ли Вы со следующими утверждениями?
         <br/>
-        <input type="checkbox" ng-model="gaming.id9">VR это здорово! Обычный игровой процесс уже приелся!<br/>
-        <input type="checkbox" ng-model="gaming.id9">Мне нравится, особенно, когда играешь в хоррор, щекочет нервы!<br/>
-        <input type="checkbox" ng-model="gaming.id9">Интересный девайс, но не более чем на пару раз<br/>
-        <input type="checkbox" ng-model="gaming.id9">С их помощью можно виртуально путешествовать куда угодно, это же
+        <input type="checkbox" ng-model="gaming.id9.q1">VR это здорово! Обычный игровой процесс уже приелся!<br/>
+        <input type="checkbox" ng-model="gaming.id9.q2">Мне нравится, особенно, когда играешь в хоррор, щекочет нервы!<br/>
+        <input type="checkbox" ng-model="gaming.id9.q3">Интересный девайс, но не более чем на пару раз<br/>
+        <input type="checkbox" ng-model="gaming.id9.q4">С их помощью можно виртуально путешествовать куда угодно, это же
         отлично!<br/>
-        <input type="checkbox" ng-model="gaming.id9">Мне нравится играть через них, но только не в хоррор! Мои нервы мне
+        <input type="checkbox" ng-model="gaming.id9.q5">Мне нравится играть через них, но только не в хоррор! Мои нервы мне
         дороже, чем острые ощущения<br/>
-        <input type="checkbox" ng-model="gaming.id9">Против VR, ведь это плохо сказывается на подсознании и здоровье в
+        <input type="checkbox" ng-model="gaming.id9.q6">Против VR, ведь это плохо сказывается на подсознании и здоровье в
         целом<br/>
     </li>
 
@@ -473,12 +476,10 @@
     <li>
         Вы ощущаете оживление, удовольствие, удовлетворение или облегчение, находясь за компьютером (в сети)?
         <br/>
-        <input type="radio"  ng-model="fisiology.id1">После рабочего дня, я с удовольствием сяду за компьютер<br/>
-        <input type="radio"  ng-model="fisiology.id1">После рабочего дня у меня нет никакого желания садиться за компьютер.
+        <input type="radio"  ng-model="fisiology.id1" value="1">После рабочего дня, я с удовольствием сяду за компьютер<br/>
+        <input type="radio"  ng-model="fisiology.id1" value="2">После рабочего дня у меня нет никакого желания садиться за компьютер.
         Лучше чем-нибудь другим займусь<br/>
-        <input type="radio"  ng-model="fisiology.id1">Чаще всего я удовлетворен(а) тем, что сижу за компьютером (в сети)<br/>
-
-        <input type="text"  ng-model="fisiology.idd">Другое<br/>
+        <input type="radio"  ng-model="fisiology.id1" value="3">Чаще всего я удовлетворен(а) тем, что сижу за компьютером (в сети)<br/>
     </li>
 
     <li>
@@ -514,29 +515,29 @@
     <li>
         Есть ли у Вас виртуальные друзья и как Вам комфортнее общаться (виртуально или реально)?
         <br/>
-        <input type="radio" ng-model="fisiology.id4">Есть, в реальности не встречались ни разу, но мы очень хорошо ладим, у
+        <input type="radio" ng-model="fisiology.id4" value="1">Есть, в реальности не встречались ни разу, но мы очень хорошо ладим, у
         нас много общего. Но все равно предпочту общение в живую<br/>
-        <input type="radio" ng-model="fisiology.id4">Много виртуальных друзей, мне гораздо интереснее общение с ними, нежели с
+        <input type="radio" ng-model="fisiology.id4" value="2">Много виртуальных друзей, мне гораздо интереснее общение с ними, нежели с
         реальными знакомыми. Предпочту виртуальное общение<br/>
-        <input type="radio" ng-model="fisiology.id4">Все мои друзья виртуальные<br/>
-        <input type="radio" ng-model="fisiology.id4"> Не имею виртуальных друзей. Живое общение куда лучше<br/>
+        <input type="radio" ng-model="fisiology.id4" value="3">Все мои друзья виртуальные<br/>
+        <input type="radio" ng-model="fisiology.id4" value="4"> Не имею виртуальных друзей. Живое общение куда лучше<br/>
     </li>
 
     <li>
         Что вы думаете по поводу знакомств в интернете?
         <br/>
-        <input type="radio" ng-model="fisiology.id5">Самые лучшие знакомства-случайные или встречи вживую<br/>
-        <input type="radio" ng-model="fisiology.id5">Не имею ничего против<br/>
-        <input type="radio" ng-model="fisiology.id5">Только так и знакомлюсь<br/>
+        <input type="radio" ng-model="fisiology.id5" value="1">Самые лучшие знакомства-случайные или встречи вживую<br/>
+        <input type="radio" ng-model="fisiology.id5" value="2">Не имею ничего против<br/>
+        <input type="radio" ng-model="fisiology.id5" value="3">Только так и знакомлюсь<br/>
     </li>
 
     <li>
         Согласны ли Вы со следующим утверждением: Считаю, что использование гаджетов осуждают те, кто не находятся в
         «потоке», технически не продвинуты, или претендуют на оригинальность, и хотят казаться выше.
         <br/>
-        <input type="radio" ng-model="fisiology.id6">Полностью согласен<br/>
-        <input type="radio" ng-model="fisiology.id6">Согласен частично<br/>
-        <input type="radio" ng-model="fisiology.id6">В корне не согласен<br/>
+        <input type="radio" ng-model="fisiology.id6" value="1">Полностью согласен<br/>
+        <input type="radio" ng-model="fisiology.id6" value="2">Согласен частично<br/>
+        <input type="radio" ng-model="fisiology.id6" value="3">В корне не согласен<br/>
     </li>
 </ol>
 

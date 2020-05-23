@@ -1,12 +1,14 @@
 package com.example.entity;
 
+import java.util.List;
+
 public class Order {
     private String name;
     private String age;
     private String sex;
     private String napravlenie;
     private String category;
-    private Object data;
+    private List<Question> data;
 
     public String getName() {
         return name;
@@ -48,11 +50,11 @@ public class Order {
         this.category = category;
     }
 
-    public Object getData() {
+    public List<Question> getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(List<Question> data) {
         this.data = data;
     }
 

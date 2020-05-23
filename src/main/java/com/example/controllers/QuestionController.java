@@ -57,6 +57,8 @@ public class QuestionController {
 //        questionService.createOrder(order);
 //        order.getList().clear();
         System.out.println(order);
+
+        questionService.handleQestion(order);
         return new ResponseEntity(HttpStatus.OK);
 
     }
