@@ -14,15 +14,19 @@ app.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 app.controller('appCtrl', function ($scope, $http, $filter) {
-    $scope.labelsChart = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-    $scope.series = ['Series A', 'Series B'];
+    $scope.labelsChart = ['Гаджеты', 'Интернет', 'Мессенджеры', 'Игры', 'Физиология'];
+    $scope.seriesChart = ['Series A', 'Series B'];
+
+    $scope.diagramResult  =  [1, 1, 1, 1, 1]
 
     $scope.dataChart = [
-        [65, 59, 80, 81, 56, 55, 40],
-        [28, 48, 40, 19, 86, 27, 90],
-        [65, 59, 80, 81, 56, 55, 40],
-        [28, 48, 40, 19, 86, 27, 90]
+        [22, 22, 9, 30, 18],
+        [15, 15, 6, 19, 11],
+        [7, 7, 3, 9, 5],
+        $scope.diagramResult
     ];
+
+    $scope.colorsChart = ['#C70039','#FF5733','#ABEBC6','#3498DB',]
 
 
     $scope.gadget = []
@@ -81,6 +85,10 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
     $scope.fisiology.id3.q5 = false
     $scope.fisiology.id3.q6 = false
     $scope.fisiology.id3.q7 = false
+
+    $scope.labelsInternetDiagram = ["Используют интернет", "Не используют интернет",
+        "Играют в игры", "Играют не часто"]
+    $scope.dataInternetDiagram = [300, 500, 100,11]
 
 
     $scope.createOrder = function () {
@@ -262,8 +270,14 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
 
             if (response.data)
                 console.log("Post Data Submitted Successfully!")
-            console.log(response.data)
-
+            $scope.diagramResult = [response.data.gadjets,
+                response.data.internet,response.data.messenger,response.data.gaming,
+                response.data.fisiology]
+            $scope.dataInternetDiagram = [response.data.internetDiagram.internetUsed,
+                response.data.internetDiagram.internetNotUsed,
+                response.data.internetDiagram.gameUsed,
+                response.data.internetDiagram.gameNotUsed,
+            ]
         }, function (response) {
             $scope.errors = []
             $scope.errors.msg = "Service not Exists";

@@ -1,5 +1,7 @@
 package com.example.entity;
 
+import com.example.diagrams.InternetDiagram;
+
 public class Person {
     private UserData userData;
     private int gadjets;
@@ -7,6 +9,7 @@ public class Person {
     private int messenger;
     private int gaming;
     private int fisiology;
+    private InternetDiagram internetDiagram;
 
     public UserData getUserData() {
         return userData;
@@ -56,6 +59,14 @@ public class Person {
         this.fisiology = fisiology;
     }
 
+    public InternetDiagram getInternetDiagram() {
+        return internetDiagram;
+    }
+
+    public void setInternetDiagram(InternetDiagram internetDiagram) {
+        this.internetDiagram = internetDiagram;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -65,6 +76,7 @@ public class Person {
                 ", messenger=" + messenger +
                 ", gaming=" + gaming +
                 ", fisiology=" + fisiology +
+                ", internetDiagram=" + internetDiagram +
                 '}';
     }
 }
