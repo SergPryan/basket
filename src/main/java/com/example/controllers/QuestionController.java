@@ -1,9 +1,9 @@
 package com.example.controllers;
 
+import com.example.entity.Person;
 import com.example.entity.UserData;
 import com.example.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -48,17 +48,10 @@ public class QuestionController {
 //    }
 
     @PostMapping("/create")
-    public ResponseEntity createOrder(HttpServletRequest request, @RequestBody UserData userData){
-//        order.setList(Utils.getOrderInSession(request).getList());
-//        if(order.getList()==null){
-//            return new ResponseEntity(HttpStatus.BAD_REQUEST);
-//        }
-//        questionService.createOrder(order);
-//        order.getList().clear();
+    public ResponseEntity<Person> createOrder(HttpServletRequest request, @RequestBody UserData userData){
         System.out.println(userData);
-
-        questionService.handleQestion(userData);
-        return new ResponseEntity(HttpStatus.OK);
+        Person person =  questionService.handleQestion(userData);
+        return ResponseEntity.ok().body(person);
 
     }
 }
