@@ -19,36 +19,6 @@ public class QuestionController {
     @Autowired
     QuestionService questionService;
 
-//    @PostMapping("/add")
-//    public ResponseEntity addInBasket(@RequestBody Product product, HttpServletRequest request){
-//        Order order = Utils.getOrderInSession(request);
-//        order.getList().add(product);
-//        return new ResponseEntity(HttpStatus.OK);
-//    }
-//
-//    @DeleteMapping("/delete/{id}")
-//    public ResponseEntity deleteInBasket(@PathVariable("id") int id, HttpServletRequest request){
-//
-//        Order order = Utils.getOrderInSession(request);
-//        Iterator<Product> iterator = order.getList().iterator();
-//        while (iterator.hasNext()){
-//            Product product =  iterator.next();
-//            System.out.println(product.getId().intValue() + " " +id);
-//            if(product.getId().intValue() == id){
-//                iterator.remove();
-//                break;
-//            }
-//        }
-//        return new ResponseEntity(HttpStatus.OK);
-//    }
-//
-//    @GetMapping("/all")
-//    public ResponseEntity<List<Product>> getAll(HttpServletRequest request){
-//        Order order = Utils.getOrderInSession(request);
-//        return new ResponseEntity<>(order.getList(),HttpStatus.OK);
-//
-//    }
-
     @Autowired
     DataService dataService;
 
@@ -60,6 +30,5 @@ public class QuestionController {
         InternetDiagram internetDiagram = dataService.getInternetDiagram(person);
         person.setInternetDiagram(internetDiagram);
         return ResponseEntity.ok().body(person);
-
     }
 }

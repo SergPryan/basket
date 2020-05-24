@@ -6,10 +6,6 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'questions.html',
             controller: 'appCtrl'
         })
-        .when('/result', {
-            templateUrl: 'result.html',
-            controller: 'appCtrl'
-        })
         .otherwise({redirectTo: '/'});
 }]);
 
@@ -90,6 +86,8 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
         "Играют в игры", "Играют не часто"]
     $scope.dataInternetDiagram = [300, 500, 100,11]
 
+    $scope.visibleDiagram = false
+    $scope.visibleQestion = true
 
     $scope.createOrder = function () {
         $scope.responses = [
@@ -278,6 +276,8 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
                 response.data.internetDiagram.gameUsed,
                 response.data.internetDiagram.gameNotUsed,
             ]
+            $scope.visibleDiagram = true
+            $scope.visibleQestion = false
         }, function (response) {
             $scope.errors = []
             $scope.errors.msg = "Service not Exists";

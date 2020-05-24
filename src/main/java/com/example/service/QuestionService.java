@@ -3,8 +3,6 @@ package com.example.service;
 import com.example.entity.Person;
 import com.example.entity.Question;
 import com.example.entity.UserData;
-import com.example.repository.OrderRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,14 +10,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class QuestionService {
-
-    @Autowired
-    OrderRepository orderRepository;
-
-    public UserData createOrder(UserData userData) {
-//        order = orderRepository.create(order);
-        return userData;
-    }
 
     public Person handleQestion(UserData userData) {
         Person person = new Person();
@@ -329,4 +319,3 @@ public class QuestionService {
         return result;
     }
 }
-//    Object[] arr =  ((List<Boolean>) question4.getValue()).toArray();

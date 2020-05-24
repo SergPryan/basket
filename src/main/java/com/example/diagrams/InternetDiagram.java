@@ -37,4 +37,14 @@ public class InternetDiagram {
     public void setGameNotUsed(int gameNotUsed) {
         this.gameNotUsed = gameNotUsed;
     }
+
+    @Override
+    public String toString() {
+        return "InternetDiagram{" +
+                "internetUsed=" + internetUsed +
+                ", internetNotUsed=" + internetNotUsed +
+                ", gameUsed=" + gameUsed +
+                ", gameNotUsed=" + gameNotUsed +
+                '}';
+    }
 }
