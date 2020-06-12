@@ -9,7 +9,9 @@ public class Person {
     private int messenger;
     private int gaming;
     private int fisiology;
+    private int karantin;
     private InternetDiagram internetDiagram;
+    private String recomendation;
 
     public UserData getUserData() {
         return userData;
@@ -67,6 +69,22 @@ public class Person {
         this.internetDiagram = internetDiagram;
     }
 
+    public int getKarantin() {
+        return karantin;
+    }
+
+    public void setKarantin(int karantin) {
+        this.karantin = karantin;
+    }
+
+    public String getRecomendation() {
+        return recomendation;
+    }
+
+    public void setRecomendation(String recomendation) {
+        this.recomendation = recomendation;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -76,7 +94,9 @@ public class Person {
                 ", messenger=" + messenger +
                 ", gaming=" + gaming +
                 ", fisiology=" + fisiology +
+                ", karantin=" + karantin +
                 ", internetDiagram=" + internetDiagram +
+                ", recomendation='" + recomendation + '\'' +
                 '}';
     }
 }

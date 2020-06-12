@@ -8,9 +8,9 @@ import com.example.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/question")
@@ -23,12 +23,33 @@ public class QuestionController {
     DataService dataService;
 
     @PostMapping("/create")
-    public ResponseEntity<Person> createOrder(HttpServletRequest request, @RequestBody UserData userData){
-        System.out.println(userData);
+    public ResponseEntity<Person> createOrder(@RequestBody UserData userData){
         Person person =  questionService.handleQestion(userData);
         dataService.add(person);
         InternetDiagram internetDiagram = dataService.getInternetDiagram(person);
         person.setInternetDiagram(internetDiagram);
+
+//        Person person = test();
+
         return ResponseEntity.ok().body(person);
+    }
+
+    private Person test() {
+        Person person = new Person();
+        person.setGaming(5);
+        person.setGadjets(5);
+        person.setInternet(5);
+        person.setMessenger(5);
+        person.setFisiology(5);
+        person.setKarantin(5);
+        InternetDiagram diagram = new InternetDiagram();
+        diagram.setInternetUsed(5);
+        diagram.setInternetNotUsed(5);
+        diagram.setGameUsed(5);
+        diagram.setGameNotUsed(5);
+        person.setInternetDiagram(diagram);
+
+        person.setRecomendation("recccccccccccccccccc");
+        return person;
     }
 }

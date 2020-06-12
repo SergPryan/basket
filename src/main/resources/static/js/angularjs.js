@@ -1,4 +1,4 @@
-app = angular.module('basketApp', ['ngRoute', 'chart.js'])
+app = angular.module('basketApp', ['ngRoute', 'chart.js', 'ngSanitize'])
 
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
@@ -82,12 +82,19 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
     $scope.fisiology.id3.q6 = false
     $scope.fisiology.id3.q7 = false
 
+    $scope.gaming.id3 = []
+
+    $scope.karantin = []
+    $scope.karantin.id1 = []
+
     $scope.labelsInternetDiagram = ["Используют интернет", "Не используют интернет",
         "Играют в игры", "Играют не часто"]
     $scope.dataInternetDiagram = [300, 500, 100,11]
 
     $scope.visibleDiagram = false
     $scope.visibleQestion = true
+
+    $scope.recomendation = ''
 
     $scope.createOrder = function () {
         $scope.responses = [
@@ -253,6 +260,28 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
                 "id": "6",
                 "type": "fisiology",
                 "value": $scope.fisiology.id6
+            },
+
+            {
+                "id": "1",
+                "type": "karantin",
+                "value": [$scope.karantin.id1.q1,
+                    $scope.karantin.id1.q2,
+                    $scope.karantin.id1.q3
+                    , $scope.karantin.id1.q4, $scope.karantin.id1.q5, $scope.karantin.id1.q6,
+                    $scope.karantin.id1.q7]
+            }, {
+                "id": "2",
+                "type": "karantin",
+                "value": $scope.karantin.id2
+            }, {
+                "id": "3",
+                "type": "karantin",
+                "value": $scope.karantin.id3
+            }, {
+                "id": "4",
+                "type": "karantin",
+                "value": $scope.karantin.id4
             }
         ];
 
@@ -268,6 +297,7 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
 
             if (response.data)
                 console.log("Post Data Submitted Successfully!")
+            console.log(response.data)
             $scope.diagramResult = [response.data.gadjets,
                 response.data.internet,response.data.messenger,response.data.gaming,
                 response.data.fisiology]
@@ -278,6 +308,7 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
             ]
             $scope.visibleDiagram = true
             $scope.visibleQestion = false
+            $scope.recomendation = response.data.recomendation;
         }, function (response) {
             $scope.errors = []
             $scope.errors.msg = "Service not Exists";

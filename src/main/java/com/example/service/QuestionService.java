@@ -34,8 +34,96 @@ public class QuestionService {
         int fisiology = checkFisiology(fisiologys);
         person.setFisiology(fisiology);
 
+        List<Question> karantins = userData.getData().stream().filter(e -> e.getType().equals("karantin")).collect(Collectors.toList());
+        int karantin = checkKarantin(karantins);
+        person.setKarantin(karantin);
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("Рекомендации:");
+        sb.append("Использовние гаджетов - ");
+        if (gadjet <= 7) {
+            sb.append("Нет зависимости");
+        }
+        if (gadjet <= 15 && gadjet >= 8) {
+            sb.append("Тенденция к зависимости");
+        }
+        if (gadjet > 15) {
+            sb.append("Зависимость");
+        }
+        sb.append("<br>");
+
+        sb.append("Использование интернета - ");
+        if (internet <= 7) {
+            sb.append("Нет зависимости");
+        }
+        if (internet <= 15 && internet >= 8) {
+            sb.append("Тенденция к зависимости");
+        }
+        if (internet > 15) {
+            sb.append("Зависимость");
+        }
+        sb.append("<br>");
+
+        sb.append("Использование мессенджеров - ");
+        if (messenger <= 3) {
+            sb.append("Нет зависимости");
+        }
+        if (messenger <= 6 && messenger >= 4) {
+            sb.append("Тенденция к зависимости");
+        }
+        if (messenger > 6) {
+            sb.append("Зависимость");
+        }
+        sb.append("<br>");
+
+        sb.append("Гейминг - ");
+        if (gaming <= 9) {
+            sb.append("Нет зависимости");
+        }
+        if (gaming <= 19 && gaming >= 10) {
+            sb.append("Тенденция к зависимости");
+        }
+        if (gaming > 20) {
+            sb.append("Зависимость");
+        }
+        sb.append("<br>");
+        if (fisiology <= 11 && gaming >= 6) {
+            sb.append("У Вас наблюдается ухудшение общего самочувствия, вызванное, в том числе, виртуальными технологиями");
+        }
+        if (fisiology > 12) {
+            sb.append("Ваш организм сильно подвержен вредному влиянию от чрезмерного использования технологий. ");
+        }
+        sb.append("<br>");
+        person.setRecomendation(sb.toString());
         return person;
 
+    }
+
+    private int checkKarantin(List<Question> karantins) {
+        int result = 0;
+        Question question1 = karantins.stream().filter(e -> e.getId().equals("1")).findAny().get();
+        List<String> q1 = (List<String>) question1.getValue();
+        q1.remove(6);
+        int q1a = (int) q1.stream().filter(e -> e.equals("1")).count();
+        int q1b = (int) q1.stream().filter(e -> e.equals("2")).count();
+        result += q1a * 2 + q1b;
+
+        Question question2 = karantins.stream().filter(e -> e.getId().equals("2")).findAny().get();
+        if (question2.getValue().equals("2")) {
+            result += 1;
+        }
+        if (question2.getValue().equals("5")) {
+            result += 2;
+        }
+
+        Question question3 = karantins.stream().filter(e -> e.getId().equals("3")).findAny().get();
+        if (question3.getValue().equals("1")) {
+            result += 1;
+        }
+        if (question3.getValue().equals("3")) {
+            result += 2;
+        }
+        return result;
     }
 
     private int checkFisiology(List<Question> fisiologys) {
@@ -45,7 +133,7 @@ public class QuestionService {
             result += 2;
         }
         Question question2 = fisiologys.stream().filter(e -> e.getId().equals("2")).findAny().get();
-        Object[] arr =  ((List<Boolean>) question2.getValue()).toArray();
+        Object[] arr = ((List<Boolean>) question2.getValue()).toArray();
         if ((Boolean) arr[0]) {
             result += 1;
         }
@@ -68,7 +156,7 @@ public class QuestionService {
             result += 2;
         }
         Question question3 = fisiologys.stream().filter(e -> e.getId().equals("3")).findAny().get();
-        Object[] arr3 =  ((List<Boolean>) question3.getValue()).toArray();
+        Object[] arr3 = ((List<Boolean>) question3.getValue()).toArray();
         if ((Boolean) arr3[0]) {
             result += 2;
         }
@@ -254,20 +342,20 @@ public class QuestionService {
         result += q2a * 2 + q2b;
 
         Question question4 = internets.stream().filter(e -> e.getId().equals("4")).findAny().get();
-        Object[] arr =  ((List<Boolean>) question4.getValue()).toArray();
+        Object[] arr = ((List<Boolean>) question4.getValue()).toArray();
         if ((Boolean) arr[0]) {
             result += 2;
         }
-        if ((Boolean)arr[1]) {
+        if ((Boolean) arr[1]) {
             result += 1;
         }
-        if ((Boolean)arr[2]) {
+        if ((Boolean) arr[2]) {
             result += 2;
         }
-        if ((Boolean)arr[3]) {
+        if ((Boolean) arr[3]) {
             result += 1;
         }
-        if ((Boolean)arr[4]) {
+        if ((Boolean) arr[4]) {
             result += 2;
         }
         return result;
