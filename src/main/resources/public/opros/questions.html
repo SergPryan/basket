@@ -1,6 +1,4 @@
 <div ng-show="visibleQestion">
-    <p ng-bind-html="recomendation"></p>
-
     Уважаемый респондент, пожалуйста, ответьте на предлагаемые вопросы. Результаты тестирования будут использованы
     только в научно-исследовательских целях. Данный опрос анонимный.
     <ol>
@@ -681,7 +679,7 @@
     <button ng-click="createOrder()">Сохранить результат</button>
 
 </div>
-<p ng-bind-html="recomendation"></p>
+
 <div ng-show="visibleDiagram">
 
 
@@ -690,7 +688,9 @@
         <canvas id="base" class="chart-horizontal-bar"
                 chart-data="dataChart" chart-labels="labelsChart" legend="true" series="seriesChart"
                 chart-colors="colorsChart">
-        </canvas>
+        </canvas><br/>
+
+        <p ng-bind-html="recomendation"></p>
 
 
         <canvas id="radar" class="chart chart-radar"

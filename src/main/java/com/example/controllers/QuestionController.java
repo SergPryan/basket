@@ -7,12 +7,11 @@ import com.example.service.DataService;
 import com.example.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.util.List;
+
+@RestController
 @RequestMapping("/question")
 public class QuestionController {
 
@@ -23,13 +22,13 @@ public class QuestionController {
     DataService dataService;
 
     @PostMapping("/create")
-    public ResponseEntity<Person> createOrder(@RequestBody UserData userData){
-        Person person =  questionService.handleQestion(userData);
-        dataService.add(person);
-        InternetDiagram internetDiagram = dataService.getInternetDiagram(person);
-        person.setInternetDiagram(internetDiagram);
+    public ResponseEntity<Person> createOrder(@RequestBody UserData userData) {
+//        Person person =  questionService.handleQestion(userData);
+//        dataService.add(person);
+//        InternetDiagram internetDiagram = dataService.getInternetDiagram(person);
+//        person.setInternetDiagram(internetDiagram);
 
-//        Person person = test();
+        Person person = test();
 
         return ResponseEntity.ok().body(person);
     }
@@ -51,5 +50,10 @@ public class QuestionController {
 
         person.setRecomendation("recccccccccccccccccc");
         return person;
+    }
+
+    @GetMapping("/result")
+    public List<Person> result(@RequestBody UserData userData) {
+        return dataService.getData();
     }
 }

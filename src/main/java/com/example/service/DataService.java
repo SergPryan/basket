@@ -45,4 +45,8 @@ public class DataService {
         diagram.setInternetUsed(internetUsed);
         return diagram;
     }
+
+    public List<Person> getData() {
+        return data;
+    }
 }
