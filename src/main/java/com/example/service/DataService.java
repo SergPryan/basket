@@ -47,6 +47,26 @@ public class DataService {
     }
 
     public List<Person> getData() {
+        data.add(test());
         return data;
+    }
+
+    public Person test() {
+        Person person = new Person();
+        person.setGaming(5);
+        person.setGadjets(5);
+        person.setInternet(5);
+        person.setMessenger(5);
+        person.setFisiology(5);
+        person.setKarantin(5);
+        InternetDiagram diagram = new InternetDiagram();
+        diagram.setInternetUsed(5);
+        diagram.setInternetNotUsed(5);
+        diagram.setGameUsed(5);
+        diagram.setGameNotUsed(5);
+        person.setInternetDiagram(diagram);
+
+        person.setRecomendation("recccccccccccccccccc");
+        return person;
     }
 }

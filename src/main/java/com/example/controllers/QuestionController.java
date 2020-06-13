@@ -15,45 +15,27 @@ import java.util.List;
 @RequestMapping("/question")
 public class QuestionController {
 
-    @Autowired
-    QuestionService questionService;
+    private final QuestionService questionService;
+    private final DataService dataService;
 
-    @Autowired
-    DataService dataService;
+    public QuestionController(QuestionService questionService, DataService dataService) {
+        this.questionService = questionService;
+        this.dataService = dataService;
+    }
+
 
     @PostMapping("/create")
     public ResponseEntity<Person> createOrder(@RequestBody UserData userData) {
-//        Person person =  questionService.handleQestion(userData);
-//        dataService.add(person);
-//        InternetDiagram internetDiagram = dataService.getInternetDiagram(person);
-//        person.setInternetDiagram(internetDiagram);
-
-        Person person = test();
-
+        Person person =  questionService.handleQestion(userData);
+        dataService.add(person);
+        InternetDiagram internetDiagram = dataService.getInternetDiagram(person);
+        person.setInternetDiagram(internetDiagram);
+        dataService.add(person);
         return ResponseEntity.ok().body(person);
     }
 
-    private Person test() {
-        Person person = new Person();
-        person.setGaming(5);
-        person.setGadjets(5);
-        person.setInternet(5);
-        person.setMessenger(5);
-        person.setFisiology(5);
-        person.setKarantin(5);
-        InternetDiagram diagram = new InternetDiagram();
-        diagram.setInternetUsed(5);
-        diagram.setInternetNotUsed(5);
-        diagram.setGameUsed(5);
-        diagram.setGameNotUsed(5);
-        person.setInternetDiagram(diagram);
-
-        person.setRecomendation("recccccccccccccccccc");
-        return person;
-    }
-
     @GetMapping("/result")
-    public List<Person> result(@RequestBody UserData userData) {
+    public List<Person> result() {
         return dataService.getData();
     }
 }

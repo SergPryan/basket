@@ -21,6 +21,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/readme.txt", "/css/*").permitAll()
                 .antMatchers("/opros/*", "/js/*").permitAll()
+                .antMatchers("/question/result").authenticated()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
