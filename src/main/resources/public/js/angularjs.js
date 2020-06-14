@@ -13,7 +13,7 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
     $scope.labelsChart = ['Гаджеты', 'Интернет', 'Мессенджеры', 'Игры', 'Физиология'];
     $scope.seriesChart = ['Series A', 'Series B'];
 
-    $scope.diagramResult  =  [1, 1, 1, 1, 1]
+    $scope.diagramResult = [1, 1, 1, 1, 1]
 
     $scope.dataChart = [
         [22, 22, 9, 30, 18],
@@ -22,7 +22,7 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
         $scope.diagramResult
     ];
 
-    $scope.colorsChart = ['#C70039','#FF5733','#ABEBC6','#3498DB',]
+    $scope.colorsChart = ['#C70039', '#FF5733', '#ABEBC6', '#3498DB',]
 
 
     $scope.gadget = []
@@ -89,7 +89,19 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
 
     $scope.labelsInternetDiagram = ["Используют интернет", "Не используют интернет",
         "Играют в игры", "Играют не часто"]
-    $scope.dataInternetDiagram = [300, 500, 100,11]
+
+    $scope.labelsDiagram5 = ["Увеличилось на 1-2 часа", "Увеличилось на 3-4 часа",
+        "Сократилось на 1-2 часа", "В течение дня пользуетесь крайне редко, приоритет отдаете, например, чтению книг",
+        "В течение всего дня используете гаджеты", "Не изменилось"]
+    $scope.labelsDiagram6 = ["Увеличилось на 1-2 часа", "Сократилось на 1-2 часа",
+        "В основном, в течение дня играете", "Реже играете", "Не изменилось"]
+    $scope.labelsDiagram7 = ["Положительно, т.к. из дома намного удобнее обучаться/работать", "Отрицательно, т.к. чувствуете большую нагрузку по работе или учебе ",
+        "Отрицательно, т.к. считаете, что дистанционный режим понижает планку качества выполняемой работы", "Нейтрально"]
+    $scope.dataInternetDiagram = [300, 500, 100, 11]
+
+    $scope.dataDiagram5 = []
+    $scope.dataDiagram6 = []
+    $scope.dataDiagram7 = []
 
     $scope.visibleDiagram = false
     $scope.visibleQestion = true
@@ -260,9 +272,7 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
                 "id": "6",
                 "type": "fisiology",
                 "value": $scope.fisiology.id6
-            },
-
-            {
+            }, {
                 "id": "1",
                 "type": "karantin",
                 "value": [$scope.karantin.id1.q1,
@@ -299,12 +309,30 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
                 console.log("Post Data Submitted Successfully!")
             console.log(response.data)
             $scope.diagramResult = [response.data.gadjets,
-                response.data.internet,response.data.messenger,response.data.gaming,
+                response.data.internet, response.data.messenger, response.data.gaming,
                 response.data.fisiology]
             $scope.dataInternetDiagram = [response.data.internetDiagram.internetUsed,
                 response.data.internetDiagram.internetNotUsed,
                 response.data.internetDiagram.gameUsed,
                 response.data.internetDiagram.gameNotUsed,
+            ]
+            $scope.dataDiagram5 = [response.data.diagram5.q1,
+                response.data.diagram5.q2,
+                response.data.diagram5.q3,
+                response.data.diagram5.q4,
+                response.data.diagram5.q5,
+                response.data.diagram5.q6,
+            ]
+            $scope.dataDiagram6 = [response.data.diagram6.q1,
+                response.data.diagram6.q2,
+                response.data.diagram6.q3,
+                response.data.diagram6.q4,
+                response.data.diagram6.q5
+            ]
+            $scope.dataDiagram7 = [response.data.diagram7.q1,
+                response.data.diagram7.q2,
+                response.data.diagram7.q3,
+                response.data.diagram7.q4
             ]
             $scope.visibleDiagram = true
             $scope.visibleQestion = false

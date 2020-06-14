@@ -129,7 +129,7 @@ public class QuestionService {
     private int checkFisiology(List<Question> fisiologys) {
         int result = 0;
         Question question1 = fisiologys.stream().filter(e -> e.getId().equals("1")).findAny().get();
-        if (question1.getValue().equals("2")) {
+        if (question1.getValue() != null && question1.getValue().equals("2")) {
             result += 2;
         }
         Question question2 = fisiologys.stream().filter(e -> e.getId().equals("2")).findAny().get();
@@ -168,25 +168,31 @@ public class QuestionService {
         }
 
         Question question4 = fisiologys.stream().filter(e -> e.getId().equals("4")).findAny().get();
-        if (question4.getValue().equals("2")) {
-            result += 2;
-        }
-        if (question4.getValue().equals("3")) {
-            result += 2;
+        if (question4.getValue() != null) {
+            if (question4.getValue().equals("2")) {
+                result += 2;
+            }
+            if (question4.getValue().equals("3")) {
+                result += 2;
+            }
         }
         Question question5 = fisiologys.stream().filter(e -> e.getId().equals("5")).findAny().get();
-        if (question5.getValue().equals("2")) {
-            result += 1;
-        }
-        if (question5.getValue().equals("3")) {
-            result += 2;
+        if (question5.getValue() != null) {
+            if (question5.getValue().equals("2")) {
+                result += 1;
+            }
+            if (question5.getValue().equals("3")) {
+                result += 2;
+            }
         }
         Question question6 = fisiologys.stream().filter(e -> e.getId().equals("6")).findAny().get();
-        if (question6.getValue().equals("1")) {
-            result += 2;
-        }
-        if (question6.getValue().equals("2")) {
-            result += 1;
+        if (question6.getValue() != null) {
+            if (question6.getValue().equals("1")) {
+                result += 2;
+            }
+            if (question6.getValue().equals("2")) {
+                result += 1;
+            }
         }
         return result;
     }
@@ -321,18 +327,22 @@ public class QuestionService {
     private int checkInternet(List<Question> internets) {
         Question question1 = internets.stream().filter(e -> e.getId().equals("1")).findAny().get();
         int result = 0;
-        if (question1.getValue().equals("1")) {
-            result += 2;
-        }
-        if (question1.getValue().equals("3")) {
-            result += 1;
+        if (question1.getValue() != null) {
+            if (question1.getValue().equals("1")) {
+                result += 2;
+            }
+            if (question1.getValue().equals("3")) {
+                result += 1;
+            }
         }
         Question question2 = internets.stream().filter(e -> e.getId().equals("2")).findAny().get();
-        if (question2.getValue().equals("1")) {
-            result += 2;
-        }
-        if (question2.getValue().equals("2")) {
-            result += 1;
+        if(question2.getValue() != null){
+            if (question2.getValue().equals("1")) {
+                result += 2;
+            }
+            if (question2.getValue().equals("2")) {
+                result += 1;
+            }
         }
 
         Question question3 = internets.stream().filter(e -> e.getId().equals("3")).findAny().get();
@@ -369,41 +379,45 @@ public class QuestionService {
         int result = q2a + q2b * 2;
 
         Question question3 = gadjets.stream().filter(e -> e.getId().equals("3")).findAny().get();
-        if (question3.getValue().equals("1")) {
+        if (question3.getValue() != null && question3.getValue().equals("1")) {
             result += 2;
         }
         Question question4 = gadjets.stream().filter(e -> e.getId().equals("4")).findAny().get();
-        if (question4.getValue().equals("1") || question4.getValue().equals("3")) {
-            result += 1;
+        if (question4.getValue() != null) {
+            if (question4.getValue().equals("1") || question4.getValue().equals("3")) {
+                result += 1;
+            }
+            if (question4.getValue().equals("4")) {
+                result += 2;
+            }
         }
-        if (question4.getValue().equals("4")) {
-            result += 2;
-        }
-
         Question question5 = gadjets.stream().filter(e -> e.getId().equals("5")).findAny().get();
-        if (question5.getValue().equals("1")) {
-            result += 2;
+        if (question5.getValue() != null) {
+            if (question5.getValue().equals("1")) {
+                result += 2;
+            }
+            if (question5.getValue().equals("3")) {
+                result += 1;
+            }
         }
-        if (question5.getValue().equals("3")) {
-            result += 1;
-        }
-
         Question question6 = gadjets.stream().filter(e -> e.getId().equals("6")).findAny().get();
-        if (question6.getValue().equals("1")) {
-            result += 1;
+        if (question6.getValue() != null) {
+            if (question6.getValue().equals("1")) {
+                result += 1;
+            }
+            if (question6.getValue().equals("3")) {
+                result += 2;
+            }
         }
-        if (question6.getValue().equals("3")) {
-            result += 2;
-        }
-
         Question question7 = gadjets.stream().filter(e -> e.getId().equals("7")).findAny().get();
-        if (question7.getValue().equals("1")) {
-            result += 2;
+        if (question7.getValue() != null) {
+            if (question7.getValue().equals("1")) {
+                result += 2;
+            }
+            if (question7.getValue().equals("3")) {
+                result += 1;
+            }
         }
-        if (question7.getValue().equals("3")) {
-            result += 1;
-        }
-
         return result;
     }
 }

@@ -622,7 +622,7 @@
                     <td><input type="radio" ng-model="karantin.id1.q4" value="3"></td>
                 </tr>
                 <tr>
-                    <td>Для общения через мессенджеры и  соцсети</td>
+                    <td>Для общения через мессенджеры и соцсети</td>
                     <td><input type="radio" ng-model="karantin.id1.q5" value="1"></td>
                     <td><input type="radio" ng-model="karantin.id1.q5" value="2"></td>
                     <td><input type="radio" ng-model="karantin.id1.q5" value="3"></td>
@@ -649,7 +649,8 @@
             <input type="radio" ng-model="karantin.id2" value="1">Увеличилось на 1-2 часа<br/>
             <input type="radio" ng-model="karantin.id2" value="2">Увеличилось на 3-4 часа<br/>
             <input type="radio" ng-model="karantin.id2" value="3">Сократилось на 1-2 часа<br/>
-            <input type="radio" ng-model="karantin.id2" value="4">В течение дня пользуетесь крайне редко, приоритет отдаете, например, чтению книг<br/>
+            <input type="radio" ng-model="karantin.id2" value="4">В течение дня пользуетесь крайне редко, приоритет
+            отдаете, например, чтению книг<br/>
             <input type="radio" ng-model="karantin.id2" value="5">В течение всего дня используете гаджеты<br/>
             <input type="radio" ng-model="karantin.id2" value="6">Не изменилось<br/>
         </li>
@@ -667,9 +668,12 @@
         <li>
             Как Вы относитесь к дистанционному режиму работы/ обучения?
             <br/>
-            <input type="radio" ng-model="karantin.id4" value="1">Положительно, т.к. из дома намного удобнее обучаться/работать<br/>
-            <input type="radio" ng-model="karantin.id4" value="2">Отрицательно, т.к. чувствуете бОльшую нагрузку по работе или учебе <br/>
-            <input type="radio" ng-model="karantin.id4" value="3">Отрицательно, т.к. считаете, что дистанционный режим понижает планку качества выполняемой работы <br/>
+            <input type="radio" ng-model="karantin.id4" value="1">Положительно, т.к. из дома намного удобнее
+            обучаться/работать<br/>
+            <input type="radio" ng-model="karantin.id4" value="2">Отрицательно, т.к. чувствуете бОльшую нагрузку по
+            работе или учебе <br/>
+            <input type="radio" ng-model="karantin.id4" value="3">Отрицательно, т.к. считаете, что дистанционный режим
+            понижает планку качества выполняемой работы <br/>
             <input type="radio" ng-model="karantin.id4" value="4">Нейтрально<br/>
         </li>
 
@@ -683,18 +687,37 @@
 <div ng-show="visibleDiagram">
 
 
-
     <div class="chart-container" ng-show="true">
         <canvas id="base" class="chart-horizontal-bar"
                 chart-data="dataChart" chart-labels="labelsChart" legend="true" series="seriesChart"
                 chart-colors="colorsChart">
-        </canvas><br/>
+        </canvas>
+        <br/>
 
         <p ng-bind-html="recomendation"></p>
 
 
-        <canvas id="radar" class="chart chart-radar"
-                chart-data="dataInternetDiagram" chart-options="options" chart-labels="labelsInternetDiagram">
-        </canvas>
+
+                    <canvas class="chart chart-radar"
+                            chart-data="dataInternetDiagram" chart-options="options"
+                            chart-labels="labelsInternetDiagram">
+                    </canvas>
+        <br/>
+
+                    <canvas  class="chart chart-radar"
+                             chart-data="dataDiagram5" chart-options="options" chart-labels="labelsDiagram5">
+                    </canvas>
+        <br/>
+
+                    <canvas class="chart chart-radar"
+                            chart-data="dataDiagram6" chart-options="options"
+                            chart-labels="labelsDiagram6">
+                    </canvas>
+
+        <br/>
+                    <canvas  class="chart chart-radar"
+                             chart-data="dataDiagram7" chart-options="options" chart-labels="labelsDiagram7">
+                    </canvas>
+
     </div>
 </div>
