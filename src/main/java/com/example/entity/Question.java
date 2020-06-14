@@ -1,6 +1,8 @@
 package com.example.entity;
 
 
+import java.util.List;
+
 public class Question {
     private String id;
     private String type;

@@ -5,25 +5,25 @@
     <title>Main</title>
 </head>
 
-<body ng-app="basketApp">
+<body ng-app="basketApp" style="background-color: yellow">
 
 <div ng-controller="appCtrl">
     <div ng-show="visibleQestion">
         Уважаемый респондент, пожалуйста, ответьте на предлагаемые вопросы. Результаты тестирования будут использованы
         только в научно-исследовательских целях. Данный опрос анонимный.
         <ol>
-            <li>
+            <li ng-style="name!=null && {'background-color':'green'}">
                 Ваше имя <input type="text" ng-model="name">
             </li>
 
-            <li>
+            <li ng-style="sex!=null && {'background-color':'green'}">
                 Пол <input type="radio" ng-model="sex" value="Мужской">Мужской<br/>
                 <input type="radio" ng-model="sex" value="Женский">Женский
             </li>
-            <li>
+            <li ng-style="age!=null && {'background-color':'green'}">
                 Возраст <input type="text" ng-model="age">
             </li>
-            <li>
+            <li ng-style="napravlenie!=null && {'background-color':'green'}">
                 В каком направлении получаете/ получили образование? *
                 <br/>
                 <input type="radio" ng-model="napravlenie" value="Экономическое">Экономическое<br/>
@@ -32,7 +32,7 @@
                 <input type="radio" ng-model="napravlenie">
                 Другое:<input type="text" ng-model="napravlenie">
             </li>
-            <li>
+            <li ng-style="category!=null && {'background-color':'green'}">
                 Категория респондента <br/>
                 <input type="radio" ng-model="category" value="1"> Старшеклассник<br/>
                 <input type="radio" ng-model="category" value="2"> Студент<br/>
@@ -42,7 +42,7 @@
         </ol>
         <h1>Использование гаджетов</h1>
         <ol>
-            <li>
+            <li ng-style="gadget.id1!=null && {'background-color':'green'}">
                 Какой тип компьютерной техники Вы предпочитаете? (возможно несколько вариантов ответа) *
                 <br/>
                 <input type="checkbox" ng-model="gadget.id1.typeComputer1">Персональный компьютер<br/>
@@ -61,42 +61,42 @@
                         <td>Свыше 50%</td>
                         <td>Не занимаюсь подобным в течение дня</td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gadget.id2.q1!=null && {'background-color':'green'}">
                         <td>Учебы/ Работы</td>
                         <td><input type="radio" ng-model="gadget.id2.q1" value="1"></td>
                         <td><input type="radio" ng-model="gadget.id2.q1" value="2"></td>
                         <td><input type="radio" ng-model="gadget.id2.q1" value="3"></td>
                         <td><input type="radio" ng-model="gadget.id2.q1" value="4"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gadget.id2.q2!=null && {'background-color':'green'}">
                         <td>Серфинг в Интернете</td>
                         <td><input type="radio" ng-model="gadget.id2.q2" value="1"></td>
                         <td><input type="radio" ng-model="gadget.id2.q2" value="2"></td>
                         <td><input type="radio" ng-model="gadget.id2.q2" value="3"></td>
                         <td><input type="radio" ng-model="gadget.id2.q2" value="4"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gadget.id2.q3!=null && {'background-color':'green'}">
                         <td>Мобильные игры</td>
                         <td><input type="radio" ng-model="gadget.id2.q3" value="1"></td>
                         <td><input type="radio" ng-model="gadget.id2.q3" value="2"></td>
                         <td><input type="radio" ng-model="gadget.id2.q3" value="3"></td>
                         <td><input type="radio" ng-model="gadget.id2.q3" value="4"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gadget.id2.q4!=null && {'background-color':'green'}">
                         <td>Компьютерные игры</td>
                         <td><input type="radio" ng-model="gadget.id2.q4" value="1"></td>
                         <td><input type="radio" ng-model="gadget.id2.q4" value="2"></td>
                         <td><input type="radio" ng-model="gadget.id2.q4" value="3"></td>
                         <td><input type="radio" ng-model="gadget.id2.q4" value="4"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gadget.id2.q5!=null && {'background-color':'green'}">
                         <td>Почитать электронную книгу</td>
                         <td><input type="radio" ng-model="gadget.id2.q5" value="1"></td>
                         <td><input type="radio" ng-model="gadget.id2.q5" value="2"></td>
                         <td><input type="radio" ng-model="gadget.id2.q5" value="3"></td>
                         <td><input type="radio" ng-model="gadget.id2.q5" value="4"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gadget.id2.q6!=null && {'background-color':'green'}">
                         <td>Посмотреть видеоблог/ кино</td>
                         <td><input type="radio" ng-model="gadget.id2.q6" value="1"></td>
                         <td><input type="radio" ng-model="gadget.id2.q6" value="2"></td>
@@ -105,42 +105,47 @@
                     </tr>
                 </table>
             </li>
-            <li>
+            <li ng-style="gadget.id3!=null && {'background-color':'green'}">
                 Берёте ли Вы телефон с собой в ванную комнату? *
                 <br/>
                 <input type="radio" ng-model="gadget.id3" value="1"> Да<br/>
                 <input type="radio" ng-model="gadget.id3" value="2"> Нет<br/>
                 <input type="radio" ng-model="gadget.id3" value="3">Иногда<br/>
             </li>
-            <li>
+            <li ng-style="gadget.id4!=null && {'background-color':'green'}">
                 Вы проверяете соц. сети перед сном?
                 <br/>
-                <input type="radio" ng-model="gadget.id4" value="1"> Если поступит уведомление о сообщении, конечно придется
+                <input type="radio" ng-model="gadget.id4" value="1"> Если поступит уведомление о сообщении, конечно
+                придется
                 ответить, а
                 так я против этого<br/>
-                <input type="radio" ng-model="gadget.id4" value="2"> Нет, перед сном никаких гаджетов, ведь это плохо влияет
+                <input type="radio" ng-model="gadget.id4" value="2"> Нет, перед сном никаких гаджетов, ведь это плохо
+                влияет
                 на
                 сон<br/>
-                <input type="radio" ng-model="gadget.id4" value="3">Нет, перед сном никаких гаджетов, ведь это плохо влияет
+                <input type="radio" ng-model="gadget.id4" value="3">Нет, перед сном никаких гаджетов, ведь это плохо
+                влияет
                 на
                 сон<br/>
                 <input type="radio" ng-model="gadget.id4" value="4">Проверяю, а когда очнусь на часах уже будет глубокая
                 ночь<br/>
             </li>
-            <li>
+            <li ng-style="gadget.id5!=null && {'background-color':'green'}">
                 Вы сидите дома, листаете ленту и у Вас разрядился телефон, Ваши действия:
                 <br/>
-                <input type="radio" ng-model="gadget.id5" value="1"> Разозлюсь, быстро поставлю на зарядку, буду ждать пока
+                <input type="radio" ng-model="gadget.id5" value="1"> Разозлюсь, быстро поставлю на зарядку, буду ждать
+                пока
                 он
                 включится и
                 продолжу листать ленту<br/>
                 <input type="radio" ng-model="gadget.id5" value="2"> Поставлю на зарядку, пойду заниматься своими
                 делами<br/>
-                <input type="radio" ng-model="gadget.id5" value="3">Расстроюсь, что не дочитал(а) интересную новость/статью,
+                <input type="radio" ng-model="gadget.id5" value="3">Расстроюсь, что не дочитал(а) интересную
+                новость/статью,
                 поставлю на
                 зарядку, вернусь к статье позже, если не забуду<br/>
             </li>
-            <li>
+            <li ng-style="gadget.id6!=null && {'background-color':'green'}">
                 По какой причине Вы покупаете новый девайс? *
                 <br/>
                 <input type="radio" ng-model="gadget.id6" value="1">По какой причине Вы покупаете новый девайс? *<br/>
@@ -149,20 +154,23 @@
                 <input type="radio" ng-model="gadget.id6" value="3">Как вышел в продажу, так сразу беру. У меня только
                 новинки<br/>
             </li>
-            <li>
+            <li ng-style="gadget.id7!=null && {'background-color':'green'}">
                 Что Вы думаете об очках виртуальной реальности?
                 <br/>
                 <input type="radio" ng-model="gadget.id7" value="1">Уже взял(а) себе!<br/>
-                <input type="radio" ng-model="gadget.id7" value="2"> Интересный гаджет, но ,говорят, еще недоработан<br/>
-                <input type="radio" ng-model="gadget.id7" value="3">Не вижу смысла покупать их. Можно брать в аренду, когда
+                <input type="radio" ng-model="gadget.id7" value="2"> Интересный гаджет, но ,говорят, еще
+                недоработан<br/>
+                <input type="radio" ng-model="gadget.id7" value="3">Не вижу смысла покупать их. Можно брать в аренду,
+                когда
                 потребуются<br/>
             </li>
         </ol>
         <h1>Использование интернета</h1>
-        В данном разделе все вопросы касаются использования интернета посредством смартфонов, т.к. это самый популярный и
+        В данном разделе все вопросы касаются использования интернета посредством смартфонов, т.к. это самый популярный
+        и
         необходимый гаджет.
         <ol>
-            <li>
+            <li ng-style="internet.id1!=null && {'background-color':'green'}">
                 Как вы предпочитаете связываться с другими людьми по важному для Вас делу? *
                 <br/>
                 <input type="radio" ng-model="internet.id1" value="1">Через мессенджеры/ Соц. сети<br/>
@@ -170,7 +178,7 @@
                 <input type="radio" ng-model="internet.id1" value="3">Видеозвонок<br/>
             </li>
 
-            <li>
+            <li ng-style="internet.id2!=null && {'background-color':'green'}">
                 С какой периодичностью Вы проверяете свои социальные сети (Instagram, VK, Facebook, Twitter)?
                 <br/>
                 <input type="radio" ng-model="internet.id2" value="1">От 10 до 20 минут<br/>
@@ -180,9 +188,11 @@
 
 
             <li>
-                Пожалуйста, укажите в каких целях Вы чаще всего пользуетесь интернетом? (ответ "Часто" подразумевает, что
+                Пожалуйста, укажите в каких целях Вы чаще всего пользуетесь интернетом? (ответ "Часто" подразумевает,
+                что
                 70% и
-                более всех интернет-запросов относятся к указанной цели; ответ "Иногда" - от 40% до 70%; Ответ "Редко" до
+                более всех интернет-запросов относятся к указанной цели; ответ "Иногда" - от 40% до 70%; Ответ "Редко"
+                до
                 40%).
                 <br/>
                 <table>
@@ -192,37 +202,37 @@
                         <td>Иногда</td>
                         <td>Редко</td>
                     </tr>
-                    <tr>
+                    <tr ng-style="internet.id3.q1!=null && {'background-color':'green'}">
                         <td>Учебы/ Работы</td>
                         <td><input type="radio" ng-model="internet.id3.q1" value="1"></td>
                         <td><input type="radio" ng-model="internet.id3.q1" value="2"></td>
                         <td><input type="radio" ng-model="internet.id3.q1" value="3"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="internet.id3.q2!=null && {'background-color':'green'}">
                         <td>Просмотр новостных лент</td>
                         <td><input type="radio" ng-model="internet.id3.q2" value="1"></td>
                         <td><input type="radio" ng-model="internet.id3.q2" value="2"></td>
                         <td><input type="radio" ng-model="internet.id3.q2" value="3"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="internet.id3.q3!=null && {'background-color':'green'}">
                         <td>Просмотр видеоблогов</td>
                         <td><input type="radio" ng-model="internet.id3.q3" value="1"></td>
                         <td><input type="radio" ng-model="internet.id3.q3" value="2"></td>
                         <td><input type="radio" ng-model="internet.id3.q3" value="3"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="internet.id3.q4!=null && {'background-color':'green'}">
                         <td>Развлечения (кино,игры)</td>
                         <td><input type="radio" ng-model="internet.id3.q4" value="1"></td>
                         <td><input type="radio" ng-model="internet.id3.q4" value="2"></td>
                         <td><input type="radio" ng-model="internet.id3.q4" value="3"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="internet.id3.q5!=null && {'background-color':'green'}">
                         <td>Для общения через мессенджеры и соц.сети</td>
                         <td><input type="radio" ng-model="internet.id3.q5" value="1"></td>
                         <td><input type="radio" ng-model="internet.id3.q5" value="2"></td>
                         <td><input type="radio" ng-model="internet.id3.q5" value="3"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="internet.id3.q6!=null && {'background-color':'green'}">
                         <td>Позновательных (чтение худ. литературы, увлечение искусством и т.д.)</td>
                         <td><input type="radio" ng-model="internet.id3.q6" value="1"></td>
                         <td><input type="radio" ng-model="internet.id3.q6" value="2"></td>
@@ -231,8 +241,9 @@
                 </table>
             </li>
 
-            <li>
-                Пожалуйста, выберите несколько ответов на вопрос из предложенных вариантов: Если во время лекции/ работы Вам
+            <li ng-style="internet.id4!=null && {'background-color':'green'}">
+                Пожалуйста, выберите несколько ответов на вопрос из предложенных вариантов: Если во время лекции/ работы
+                Вам
                 стало скучно, то Вы...
                 <br/>
                 <input type="checkbox" ng-model="internet.id4.q1">Полистаете новостную ленту<br/>
@@ -242,19 +253,20 @@
                 <input type="checkbox" ng-model="internet.id4.q4">Посетите сообщества в соц. сети<br/>
                 <input type="checkbox" ng-model="internet.id4.q5">Поиграете в мобильные игры<br/>
                 <input type="checkbox" ng-model="internet.id4.q6">Подумаете о личном<br/>
-                <input type="checkbox" ng-model="internet.id4.q7">Направите взгляд в одну точку и продолжите скучать, пока
+                <input type="checkbox" ng-model="internet.id4.q7">Направите взгляд в одну точку и продолжите скучать,
+                пока
                 Вас не
                 окликнут<br/>
             </li>
 
         </ol>
 
-        <h1>Использование мессендржеров</h1>
+        <h1>Использование мессенджеров</h1>
         В данном разделе вопросы будут касаться эффективности использования наиболее популярных мессенджеров: WhatsApp,
         Telegram, Viber.
         <ol>
 
-            <li>
+            <li ng-style="messenger.id1!=null && {'background-color':'green'}">
                 Через какой мессенджер Вы предпочитаете общаться?
                 <br/>
                 <input type="radio" ng-model="messenger.id1" value="1">WhatsApp<br/>
@@ -262,16 +274,17 @@
                 <input type="radio" ng-model="messenger.id1" value="3">Viber<br/>
             </li>
 
-            <li>
+            <li ng-style="messenger.id2!=null && {'background-color':'green'}">
                 В ваших диалогах с людьми в большей степени присутствует...
                 <br/>
                 <input type="radio" ng-model="messenger.id2" value="1">Конструктивное общение (обсуждение каких-либо
                 событий,
                 вопросов)<br/>
-                <input type="radio" ng-model="messenger.id2" value="2">Видеоматериалы и изображения разного характера<br/>
+                <input type="radio" ng-model="messenger.id2" value="2">Видеоматериалы и изображения разного
+                характера<br/>
             </li>
 
-            <li>
+            <li ng-style="messenger.id3!=null && {'background-color':'green'}">
                 Прочитав шокирующую новость в интернете, Вы..
                 <br/>
                 <input type="radio" ng-model="messenger.id3" value="1">Тут же поделитесь ею в мессенджере<br/>
@@ -283,7 +296,7 @@
                 <input type="radio" ng-model="messenger.id3" value="4">Если не забудете, расскажете при встрече<br/>
             </li>
 
-            <li>
+            <li ng-style="messenger.id4!=null && {'background-color':'green'}">
                 Представьте ситуацию, когда у Вас много работы и отвлекаться нежелательно, Вам поступают сообщения с
                 видео/аудиоматериалами и изображениями. Ваши действия?
                 <br/>
@@ -300,7 +313,7 @@
                 сообщение непрочитанным<br/>
             </li>
 
-            <li>
+            <li ng-style="messenger.id5!=null && {'background-color':'green'}">
                 Для обсуждения деловых вопросов с условным клиентом лучше будет... (Пожалуйста, выберите не больше 2х
                 вариантов).
                 <br/>
@@ -315,7 +328,7 @@
         <h1>Гейминг</h1>
         <ol>
 
-            <li>
+            <li ng-style="gaming.id1!=null && {'background-color':'green'}">
                 Как часто Вы играете в компьютерные игры?
                 <br/>
                 <input type="radio" ng-model="gaming.id1" value="1"> Раз в неделю и реже (не играю)<br/>
@@ -324,7 +337,7 @@
                 <input type="radio" ng-model="gaming.id1" value="4">Ежедневно, с небольшими перерывами<br/>
             </li>
 
-            <li>
+            <li ng-style="gaming.id2!=null && {'background-color':'green'}">
                 Сколько времени в день Вы готовы тратить на компьютерные игры?
                 <br/>
                 <input type="radio" ng-model="gaming.id2" value="1"> 30 минут- час<br/>
@@ -345,42 +358,42 @@
                         <td>Очень редко в такое играю</td>
                         <td>Вообще не интересует</td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gaming.id3.q1!=null && {'background-color':'green'}">
                         <td>Аркадные</td>
                         <td><input type="radio" ng-model="gaming.id3.q1" value="1"></td>
                         <td><input type="radio" ng-model="gaming.id3.q1" value="2"></td>
                         <td><input type="radio" ng-model="gaming.id3.q1" value="3"></td>
                         <td><input type="radio" ng-model="gaming.id3.q1" value="4"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gaming.id3.q2!=null && {'background-color':'green'}">
                         <td>Ролевые</td>
                         <td><input type="radio" ng-model="gaming.id3.q2" value="1"></td>
                         <td><input type="radio" ng-model="gaming.id3.q2" value="2"></td>
                         <td><input type="radio" ng-model="gaming.id3.q2" value="3"></td>
                         <td><input type="radio" ng-model="gaming.id3.q2" value="4"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gaming.id3.q3!=null && {'background-color':'green'}">
                         <td>Стратегии</td>
                         <td><input type="radio" ng-model="gaming.id3.q3" value="1"></td>
                         <td><input type="radio" ng-model="gaming.id3.q3" value="2"></td>
                         <td><input type="radio" ng-model="gaming.id3.q3" value="3"></td>
                         <td><input type="radio" ng-model="gaming.id3.q3" value="4"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gaming.id3.q4!=null && {'background-color':'green'}">
                         <td>Логические</td>
                         <td><input type="radio" ng-model="gaming.id3.q4" value="1"></td>
                         <td><input type="radio" ng-model="gaming.id3.q4" value="2"></td>
                         <td><input type="radio" ng-model="gaming.id3.q4" value="3"></td>
                         <td><input type="radio" ng-model="gaming.id3.q4" value="4"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gaming.id3.q5!=null && {'background-color':'green'}">
                         <td>Квесты</td>
                         <td><input type="radio" ng-model="gaming.id3.q5" value="1"></td>
                         <td><input type="radio" ng-model="gaming.id3.q5" value="2"></td>
                         <td><input type="radio" ng-model="gaming.id3.q5" value="3"></td>
                         <td><input type="radio" ng-model="gaming.id3.q5" value="4"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gaming.id3.q6!=null && {'background-color':'green'}">
                         <td>Симулятор</td>
                         <td><input type="radio" ng-model="gaming.id3.q6" value="1"></td>
                         <td><input type="radio" ng-model="gaming.id3.q6" value="2"></td>
@@ -391,10 +404,11 @@
                 </table>
             </li>
 
-            <li>
+            <li ng-style="gaming.id4!=null && {'background-color':'green'}">
                 Как часто с Вами бывает так, что Вы не замечаете, как быстро проходит время в процессе игры?
                 <br/>
-                <input type="radio" ng-model="gaming.id4" value="1"> Каждый раз, когда играю в новую интересную игру<br/>
+                <input type="radio" ng-model="gaming.id4" value="1"> Каждый раз, когда играю в новую интересную
+                игру<br/>
                 <input type="radio" ng-model="gaming.id4" value="2">Стараюсь играть ограниченное время, но если игра
                 захватывает, могу
                 перестать контролировать время<br/>
@@ -402,22 +416,27 @@
                 рамки<br/>
             </li>
 
-            <li>
-                Представьте ситуацию: У Вас очень напряженная игровая онлайн-сессия в команде, и вдруг, Вас позвали гулять
+            <li ng-style="gaming.id5!=null && {'background-color':'green'}">
+                Представьте ситуацию: У Вас очень напряженная игровая онлайн-сессия в команде, и вдруг, Вас позвали
+                гулять
                 или
                 попросили сходить в магазин. Ваши действия:
                 <br/>
-                <input type="radio" ng-model="gaming.id5" value="1">Доиграете текущую игровую сессию и сходите погулять/ в
+                <input type="radio" ng-model="gaming.id5" value="1">Доиграете текущую игровую сессию и сходите погулять/
+                в
                 магазин<br/>
-                <input type="radio" ng-model="gaming.id5" value="2">Сразу же после просьбы начнете собираться в магазин/ на
+                <input type="radio" ng-model="gaming.id5" value="2">Сразу же после просьбы начнете собираться в магазин/
+                на
                 прогулку<br/>
-                <input type="radio" ng-model="gaming.id5" value="3">Попросите, что бы Вас не отвлекали и подождали пока Вы
+                <input type="radio" ng-model="gaming.id5" value="3">Попросите, что бы Вас не отвлекали и подождали пока
+                Вы
                 закончите<br/>
                 <input type="radio" ng-model="gaming.id5" value="4">Какая прогулка, тут дела по-важнее!<br/>
             </li>
 
             <li>
-                В процессе игры Вас отвлекли по какому-либо поводу и Вы проиграли, как Вы, обычно, реагируете на подобное?
+                В процессе игры Вас отвлекли по какому-либо поводу и Вы проиграли, как Вы, обычно, реагируете на
+                подобное?
                 <br/>
                 <table>
                     <tr>
@@ -426,25 +445,25 @@
                         <td>Редко так реагирую</td>
                         <td>Никогда так не реагирую</td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gaming.id6.q1!=null && {'background-color':'green'}">
                         <td>Ничего страшного, попробую сначала</td>
                         <td><input type="radio" ng-model="gaming.id6.q1" value="1"></td>
                         <td><input type="radio" ng-model="gaming.id6.q1" value="2"></td>
                         <td><input type="radio" ng-model="gaming.id6.q1" value="3"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gaming.id6.q2!=null && {'background-color':'green'}">
                         <td>Рассержусь: этот повод не мог подождать?!</td>
                         <td><input type="radio" ng-model="gaming.id6.q2" value="1"></td>
                         <td><input type="radio" ng-model="gaming.id6.q2" value="2"></td>
                         <td><input type="radio" ng-model="gaming.id6.q2" value="3"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gaming.id6.q3!=null && {'background-color':'green'}">
                         <td>Неосознанно начну кричать и обвинять того, кто отвлек</td>
                         <td><input type="radio" ng-model="gaming.id6.q3" value="1"></td>
                         <td><input type="radio" ng-model="gaming.id6.q3" value="2"></td>
                         <td><input type="radio" ng-model="gaming.id6.q3" value="3"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="gaming.id6.q4!=null && {'background-color':'green'}">
                         <td>Специально, повышенным тоном попрошу не лезть во время игры</td>
                         <td><input type="radio" ng-model="gaming.id6.q4" value="1"></td>
                         <td><input type="radio" ng-model="gaming.id6.q4" value="2"></td>
@@ -454,49 +473,58 @@
                 </table>
             </li>
 
-            <li>
+            <li ng-style="gaming.id7!=null && {'background-color':'green'}">
                 По- вашему мнению, нормально ли весь выходной просидеть за компьютерной игрой ?
                 <br/>
-                <input type="radio" ng-model="gaming.id7" value="1">Да, почему бы и нет. Я всю неделю работал, имею право
+                <input type="radio" ng-model="gaming.id7" value="1">Да, почему бы и нет. Я всю неделю работал, имею
+                право
                 так
                 отдохнуть<br/>
-                <input type="radio" ng-model="gaming.id7" value="2">Вполне, мне в выходной делать нечего. По дому все и без
+                <input type="radio" ng-model="gaming.id7" value="2">Вполне, мне в выходной делать нечего. По дому все и
+                без
                 меня
                 делают, а
                 смотреть телевизор или читать мне не особо интересно<br/>
-                <input type="radio" ng-model="gaming.id7" value="3">Нет, можно поиграть пару часов, но потом заняться более
+                <input type="radio" ng-model="gaming.id7" value="3">Нет, можно поиграть пару часов, но потом заняться
+                более
                 важными
                 делами<br/>
                 <input type="radio" ng-model="gaming.id7" value="4">У меня много дел в выходные и мне не до игр<br/>
             </li>
 
-            <li>
+            <li ng-style="gaming.id8!=null && {'background-color':'green'}">
                 Если у Вас имеются VR очки, как часто Вы играете через них?
                 <br/>
-                <input type="radio" ng-model="gaming.id8" value="1">Да, почему бы и нет. Я всю неделю работал, имею право
+                <input type="radio" ng-model="gaming.id8" value="1">Да, почему бы и нет. Я всю неделю работал, имею
+                право
                 так
                 отдохнуть<br/>
-                <input type="radio" ng-model="gaming.id8" value="2">Вполне, мне в выходной делать нечего. По дому все и без
+                <input type="radio" ng-model="gaming.id8" value="2">Вполне, мне в выходной делать нечего. По дому все и
+                без
                 меня
                 делают, а
                 смотреть телевизор или читать мне не особо интересно<br/>
-                <input type="radio" ng-model="gaming.id8" value="3">Нет, можно поиграть пару часов, но потом заняться более
+                <input type="radio" ng-model="gaming.id8" value="3">Нет, можно поиграть пару часов, но потом заняться
+                более
                 важными
                 делами<br/>
                 <input type="radio" ng-model="gaming.id8" value="4">У меня много дел в выходные и мне не до игр<br/>
             </li>
 
-            <li>
+            <li ng-style="gaming.id9!=null && {'background-color':'green'}">
                 Согласны ли Вы со следующими утверждениями?
                 <br/>
-                <input type="checkbox" ng-model="gaming.id9.q1">VR это здорово! Обычный игровой процесс уже приелся!<br/>
+                <input type="checkbox" ng-model="gaming.id9.q1">VR это здорово! Обычный игровой процесс уже
+                приелся!<br/>
                 <input type="checkbox" ng-model="gaming.id9.q2">Мне нравится, особенно, когда играешь в хоррор, щекочет
                 нервы!<br/>
                 <input type="checkbox" ng-model="gaming.id9.q3">Интересный девайс, но не более чем на пару раз<br/>
-                <input type="checkbox" ng-model="gaming.id9.q4">С их помощью можно виртуально путешествовать куда угодно,
+                <input type="checkbox" ng-model="gaming.id9.q4">С их помощью можно виртуально путешествовать куда
+                угодно,
                 это же
                 отлично!<br/>
-                <input type="checkbox" ng-model="gaming.id9.q5">Мне нравится играть через них, но только не в хоррор! Мои
+                <input type="checkbox" ng-model="gaming.id9.q5">Мне нравится играть через них, но только не в хоррор!
+                Мои
                 нервы мне
                 дороже, чем острые ощущения<br/>
                 <input type="checkbox" ng-model="gaming.id9.q6">Против VR, ведь это плохо сказывается на подсознании и
@@ -509,7 +537,7 @@
         <h1>Влияние на физиологию и психологию</h1>
         <ol>
 
-            <li>
+            <li ng-style="fisiology.id1!=null && {'background-color':'green'}">
                 Вы ощущаете оживление, удовольствие, удовлетворение или облегчение, находясь за компьютером (в сети)?
                 <br/>
                 <input type="radio" ng-model="fisiology.id1" value="1">После рабочего дня, я с удовольствием сяду за
@@ -521,32 +549,37 @@
                 компьютером (в сети)<br/>
             </li>
 
-            <li>
+            <li ng-style="fisiology.id2!=null && {'background-color':'green'}">
                 Пожалуйста, выберите пункты, которые Вам соответствуют: *
                 <br/>
-                <input type="checkbox" ng-model="fisiology.id2.q1">Я часто испытываю сухость в глазах, если смотрю в монитор
+                <input type="checkbox" ng-model="fisiology.id2.q1">Я часто испытываю сухость в глазах, если смотрю в
+                монитор
                 или пользуюсь
                 разными гаджетами<br/>
                 <input type="checkbox" ng-model="fisiology.id2.q2">У меня начинает болеть спина, когда сижу за
                 компьютером<br/>
                 <input type="checkbox" ng-model="fisiology.id2.q3">Я люблю лежать на диване с ноутбуком, ведь это
                 удобно<br/>
-                <input type="checkbox" ng-model="fisiology.id2.q4">Я наблюдаю ухудшение концентрации в учебе/ работе после
+                <input type="checkbox" ng-model="fisiology.id2.q4">Я наблюдаю ухудшение концентрации в учебе/ работе
+                после
                 перерыва на соц.
                 сети или игры<br/>
-                <input type="checkbox" ng-model="fisiology.id2.q5">Замечаю, что я становлюсь раздражительным, когда сижу в
+                <input type="checkbox" ng-model="fisiology.id2.q5">Замечаю, что я становлюсь раздражительным, когда сижу
+                в
                 Интернете или
                 нахожусь в игровом процессе<br/>
-                <input type="checkbox" ng-model="fisiology.id2.q6">Бывает, что я психую, когда не получается пройти миссию в
+                <input type="checkbox" ng-model="fisiology.id2.q6">Бывает, что я психую, когда не получается пройти
+                миссию в
                 игре<br/>
 
-                <input type="checkbox" ng-model="fisiology.id2.q7">Моё близкое окружение часто бывает недовольно тем, что
+                <input type="checkbox" ng-model="fisiology.id2.q7">Моё близкое окружение часто бывает недовольно тем,
+                что
                 пренебрегаю делами
                 и общением с ними, в угоду Интернету, гаджетам и играм<br/>
                 <input type="checkbox" ng-model="fisiology.id2.q8">Ничего из вышеперечисленного ко мне не относится<br/>
             </li>
 
-            <li>
+            <li ng-style="fisiology.id3!=null && {'background-color':'green'}">
                 В сложной жизненной ситуации Вы доверитесь советам (возможно несколько вариантов ответа): *
                 <br/>
                 <input type="checkbox" ng-model="fisiology.id3.q1">Интернета<br/>
@@ -554,13 +587,14 @@
                 <input type="checkbox" ng-model="fisiology.id3.q3">Друзей, окружающих Вас в реальной жизни и родных<br/>
                 <input type="checkbox" ng-model="fisiology.id3.q4"> Виртуальных друзей<br/>
                 <input type="checkbox" ng-model="fisiology.id3.q5">Специалиста, обратитесь к психологу<br/>
-                <input type="checkbox" ng-model="fisiology.id3.q6">Бывает, что я психую, когда не получается пройти миссию в
+                <input type="checkbox" ng-model="fisiology.id3.q6">Бывает, что я психую, когда не получается пройти
+                миссию в
                 игре<br/>
                 <input type="checkbox" ng-model="fisiology.id3.q7">Предпочту никого не слушать и решить проблему
                 самостоятельно<br/>
             </li>
 
-            <li>
+            <li ng-style="fisiology.id4!=null && {'background-color':'green'}">
                 Есть ли у Вас виртуальные друзья и как Вам комфортнее общаться (виртуально или реально)?
                 <br/>
                 <input type="radio" ng-model="fisiology.id4" value="1">Есть, в реальности не встречались ни разу, но мы
@@ -570,10 +604,11 @@
                 общение с ними, нежели с
                 реальными знакомыми. Предпочту виртуальное общение<br/>
                 <input type="radio" ng-model="fisiology.id4" value="3">Все мои друзья виртуальные<br/>
-                <input type="radio" ng-model="fisiology.id4" value="4"> Не имею виртуальных друзей. Живое общение куда лучше<br/>
+                <input type="radio" ng-model="fisiology.id4" value="4"> Не имею виртуальных друзей. Живое общение куда
+                лучше<br/>
             </li>
 
-            <li>
+            <li ng-style="fisiology.id5!=null && {'background-color':'green'}">
                 Что вы думаете по поводу знакомств в интернете?
                 <br/>
                 <input type="radio" ng-model="fisiology.id5" value="1">Самые лучшие знакомства-случайные или встречи
@@ -582,8 +617,9 @@
                 <input type="radio" ng-model="fisiology.id5" value="3">Только так и знакомлюсь<br/>
             </li>
 
-            <li>
-                Согласны ли Вы со следующим утверждением: Считаю, что использование гаджетов осуждают те, кто не находятся в
+            <li ng-style="fisiology.id6!=null && {'background-color':'green'}">
+                Согласны ли Вы со следующим утверждением: Считаю, что использование гаджетов осуждают те, кто не
+                находятся в
                 «потоке», технически не продвинуты, или претендуют на оригинальность, и хотят казаться выше.
                 <br/>
                 <input type="radio" ng-model="fisiology.id6" value="1">Полностью согласен<br/>
@@ -607,44 +643,44 @@
                         <td>Иногда</td>
                         <td>Редко</td>
                     </tr>
-                    <tr>
+                    <tr ng-style="karantin.id1.q1!=null && {'background-color':'green'}">
                         <td>Дистанционное обучение/Работа</td>
                         <td><input type="radio" ng-model="karantin.id1.q1" value="1"></td>
                         <td><input type="radio" ng-model="karantin.id1.q1" value="2"></td>
                         <td><input type="radio" ng-model="karantin.id1.q1" value="3"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="karantin.id1.q2!=null && {'background-color':'green'}">
                         <td>Просмотр новостных лент</td>
                         <td><input type="radio" ng-model="karantin.id1.q2" value="1"></td>
                         <td><input type="radio" ng-model="karantin.id1.q2" value="2"></td>
                         <td><input type="radio" ng-model="karantin.id1.q2" value="3"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="karantin.id1.q3!=null && {'background-color':'green'}">
                         <td>Просмотр видеоблогов</td>
                         <td><input type="radio" ng-model="karantin.id1.q3" value="1"></td>
                         <td><input type="radio" ng-model="karantin.id1.q3" value="2"></td>
                         <td><input type="radio" ng-model="karantin.id1.q3" value="3"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="karantin.id1.q4!=null && {'background-color':'green'}">
                         <td>Развлечения (Кино,игры)</td>
                         <td><input type="radio" ng-model="karantin.id1.q4" value="1"></td>
                         <td><input type="radio" ng-model="karantin.id1.q4" value="2"></td>
                         <td><input type="radio" ng-model="karantin.id1.q4" value="3"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="karantin.id1.q5!=null && {'background-color':'green'}">
                         <td>Для общения через мессенджеры и соцсети</td>
                         <td><input type="radio" ng-model="karantin.id1.q5" value="1"></td>
                         <td><input type="radio" ng-model="karantin.id1.q5" value="2"></td>
                         <td><input type="radio" ng-model="karantin.id1.q5" value="3"></td>
                     </tr>
-                    <tr>
+                    <tr ng-style="karantin.id1.q6!=null && {'background-color':'green'}">
                         <td>Познавательные</td>
                         <td><input type="radio" ng-model="karantin.id1.q6" value="1"></td>
                         <td><input type="radio" ng-model="karantin.id1.q6" value="2"></td>
                         <td><input type="radio" ng-model="karantin.id1.q6" value="3"></td>
                     </tr>
 
-                    <tr>
+                    <tr ng-style="karantin.id1.q7!=null && {'background-color':'green'}">
                         <td>Онлайн-курсы по различным видам деятельности</td>
                         <td><input type="radio" ng-model="karantin.id1.q7" value="1"></td>
                         <td><input type="radio" ng-model="karantin.id1.q7" value="2"></td>
@@ -653,7 +689,7 @@
                 </table>
             </li>
 
-            <li>
+            <li ng-style="karantin.id2!=null && {'background-color':'green'}">
                 Насколько в среднем изменилось время, проводимое Вами за использованием гаджетов?
                 <br/>
                 <input type="radio" ng-model="karantin.id2" value="1">Увеличилось на 1-2 часа<br/>
@@ -665,7 +701,7 @@
                 <input type="radio" ng-model="karantin.id2" value="6">Не изменилось<br/>
             </li>
 
-            <li>
+            <li ng-style="karantin.id3!=null && {'background-color':'green'}">
                 Как изменилось время, которое вы тратите на компьютерные игры?
                 <br/>
                 <input type="radio" ng-model="karantin.id3" value="1">Увеличилось на 1-2 часа<br/>
@@ -675,14 +711,15 @@
                 <input type="radio" ng-model="karantin.id3" value="5">Не изменилось<br/>
             </li>
 
-            <li>
+            <li ng-style="karantin.id4!=null && {'background-color':'green'}">
                 Как Вы относитесь к дистанционному режиму работы/ обучения?
                 <br/>
                 <input type="radio" ng-model="karantin.id4" value="1">Положительно, т.к. из дома намного удобнее
                 обучаться/работать<br/>
                 <input type="radio" ng-model="karantin.id4" value="2">Отрицательно, т.к. чувствуете бОльшую нагрузку по
                 работе или учебе <br/>
-                <input type="radio" ng-model="karantin.id4" value="3">Отрицательно, т.к. считаете, что дистанционный режим
+                <input type="radio" ng-model="karantin.id4" value="3">Отрицательно, т.к. считаете, что дистанционный
+                режим
                 понижает планку качества выполняемой работы <br/>
                 <input type="radio" ng-model="karantin.id4" value="4">Нейтрально<br/>
             </li>
@@ -707,30 +744,40 @@
             <p ng-bind-html="recomendation"></p>
 
 
-
+            <br/>
             <canvas class="chart chart-radar"
                     chart-data="dataInternetDiagram" chart-options="options"
                     chart-labels="labelsInternetDiagram">
             </canvas>
-            <br/>
-
-            <canvas  class="chart chart-radar"
-                     chart-data="dataDiagram5" chart-options="options" chart-labels="labelsDiagram5">
-            </canvas>
-            <br/>
-
-            <canvas class="chart chart-radar"
-                    chart-data="dataDiagram6" chart-options="options"
-                    chart-labels="labelsDiagram6">
-            </canvas>
-
-            <br/>
-            <canvas  class="chart chart-radar"
-                     chart-data="dataDiagram7" chart-options="options" chart-labels="labelsDiagram7">
-            </canvas>
 
         </div>
+
+        <canvas class="chart chart-radar"
+                chart-data="dataInternetDiagram" chart-options="options"
+                chart-labels="labelsInternetDiagram">
+        </canvas>
+        <br/>
+
+        <canvas class="chart chart-radar"
+                chart-data="dataDiagram5" chart-options="options" chart-labels="labelsDiagram5">
+        </canvas>
+        <h4>Изменение времени, потраченного на использование гаджетов в режиме самоизоляции</h4>
+        <br/>
+
+        <canvas class="chart chart-radar"
+                chart-data="dataDiagram6" chart-options="options"
+                chart-labels="labelsDiagram6">
+        </canvas>
+        <h4>Изменение времени, потраченного на компьютерные игры в режиме самоизоляции</h4>
+
+        <br/>
+        <canvas class="chart chart-radar"
+                chart-data="dataDiagram7" chart-options="options" chart-labels="labelsDiagram7">
+        </canvas>
+        <h4>отношение к дистанционно у режиму работы/обучения</h4>
+
     </div>
+</div>
 </div>
 
 
