@@ -1,13 +1,4 @@
-app = angular.module('basketApp', ['ngRoute', 'chart.js', 'ngSanitize'])
-
-app.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider
-        .when('/questions', {
-            templateUrl: 'questions.html',
-            controller: 'appCtrl'
-        })
-        .otherwise({redirectTo: '/'});
-}]);
+app = angular.module('basketApp', ['chart.js', 'ngSanitize'])
 
 app.controller('appCtrl', function ($scope, $http, $filter) {
     $scope.labelsChart = ['Гаджеты', 'Интернет', 'Мессенджеры', 'Игры', 'Физиология'];
