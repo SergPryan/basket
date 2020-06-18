@@ -29,7 +29,7 @@ public class QuestionController {
     @PostMapping("/create")
     public ResponseEntity<Person> createOrder(@RequestBody UserData userData) {
         Person person =  questionService.handleQestion(userData);
-        dataService.add(person);
+        person = dataService.add(person);
         InternetDiagram internetDiagram = dataService.getInternetDiagram();
         person.setInternetDiagram(internetDiagram);
 

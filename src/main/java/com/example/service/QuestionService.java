@@ -83,7 +83,7 @@ public class QuestionService {
         if (gaming <= 19 && gaming >= 10) {
             sb.append("Тенденция к зависимости");
         }
-        if (gaming > 20) {
+        if (gaming >= 20) {
             sb.append("Зависимость");
         }
         sb.append("<br>");

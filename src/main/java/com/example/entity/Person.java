@@ -4,8 +4,18 @@ import com.example.diagrams.Diagram5;
 import com.example.diagrams.Diagram6;
 import com.example.diagrams.Diagram7;
 import com.example.diagrams.InternetDiagram;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.TypeAlias;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@Document(collection = "persons")
+@TypeAlias("person")
 public class Person {
+    @Id
+    private String id;
     private UserData userData;
     private int gadjets;
     private int internet;
@@ -18,6 +28,7 @@ public class Person {
     private Diagram6 diagram6;
     private Diagram7 diagram7;
     private String recomendation;
+    private LocalDateTime updated;
 
     public UserData getUserData() {
         return userData;
@@ -115,10 +126,27 @@ public class Person {
         this.diagram7 = diagram7;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(LocalDateTime updated) {
+        this.updated = updated;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
-                "userData=" + userData +
+                "id='" + id + '\'' +
+                ", userData=" + userData +
                 ", gadjets=" + gadjets +
                 ", internet=" + internet +
                 ", messenger=" + messenger +
@@ -130,6 +158,7 @@ public class Person {
                 ", diagram6=" + diagram6 +
                 ", diagram7=" + diagram7 +
                 ", recomendation='" + recomendation + '\'' +
+                ", updated=" + updated +
                 '}';
     }
 }

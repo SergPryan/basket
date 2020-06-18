@@ -16,68 +16,6 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
     $scope.colorsChart = ['#C70039', '#FF5733', '#ABEBC6', '#3498DB',]
 
 
-    // $scope.gadget = []
-    // $scope.internet = []
-    // $scope.messenger = []
-    // $scope.messenger.id5 = []
-    // $scope.messenger.id6 = []
-    // // $scope.gadget.id1 = []
-    // $scope.gadget.id2 = []
-    // $scope.gadget.id4 = []
-    // $scope.internet.id3 = []
-    //
-    // $scope.internet.id4 = []
-
-    // $scope.gadget.id1.typeComputer1 = false
-    // $scope.gadget.id1.typeComputer2 = false
-    // $scope.gadget.id1.typeComputer3 = false
-    // $scope.gadget.id1.typeComputer4 = false
-
-    // $scope.internet.id4.q1 = false
-    // $scope.internet.id4.q2 = false
-    // $scope.internet.id4.q3 = false
-    // $scope.internet.id4.q4 = false
-    // $scope.internet.id4.q5 = false
-    // $scope.internet.id4.q6 = false
-    // $scope.internet.id4.q7 = false
-    //
-    // $scope.gaming = []
-    // $scope.gaming.id4 = []
-    // $scope.gaming.id6 = []
-    // $scope.gaming.id9 = []
-    // $scope.gaming.id9.q1 = false
-    // $scope.gaming.id9.q2 = false
-    // $scope.gaming.id9.q3 = false
-    // $scope.gaming.id9.q4 = false
-    // $scope.gaming.id9.q5 = false
-    // $scope.gaming.id9.q6 = false
-    //
-    // $scope.fisiology = []
-    // $scope.fisiology.id2 = []
-    // $scope.fisiology.id3 = []
-    //
-    // $scope.fisiology.id2.q1 = false
-    // $scope.fisiology.id2.q2 = false
-    // $scope.fisiology.id2.q3 = false
-    // $scope.fisiology.id2.q4 = false
-    // $scope.fisiology.id2.q5 = false
-    // $scope.fisiology.id2.q6 = false
-    // $scope.fisiology.id2.q7 = false
-    // $scope.fisiology.id2.q8 = false
-    //
-    // $scope.fisiology.id3.q1 = false
-    // $scope.fisiology.id3.q2 = false
-    // $scope.fisiology.id3.q3 = false
-    // $scope.fisiology.id3.q4 = false
-    // $scope.fisiology.id3.q5 = false
-    // $scope.fisiology.id3.q6 = false
-    // $scope.fisiology.id3.q7 = false
-    //
-    // $scope.gaming.id3 = []
-    //
-    // $scope.karantin = []
-    // $scope.karantin.id1 = []
-
     $scope.labelsInternetDiagram = ["Используют интернет", "Не используют интернет",
         "Играют в игры", "Играют не часто"]
 
@@ -88,15 +26,12 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
         "В основном, в течение дня играете", "Реже играете", "Не изменилось"]
     $scope.labelsDiagram7 = ["Положительно, т.к. из дома намного удобнее обучаться/работать", "Отрицательно, т.к. чувствуете большую нагрузку по работе или учебе ",
         "Отрицательно, т.к. считаете, что дистанционный режим понижает планку качества выполняемой работы", "Нейтрально"]
-    $scope.dataInternetDiagram = [300, 500, 100, 11]
-
+    $scope.dataInternetDiagram = []
     $scope.dataDiagram5 = []
     $scope.dataDiagram6 = []
     $scope.dataDiagram7 = []
-
     $scope.visibleDiagram = false
     $scope.visibleQestion = true
-
     $scope.recomendation = ''
 
     $scope.createOrder = function () {
@@ -302,6 +237,11 @@ app.controller('appCtrl', function ($scope, $http, $filter) {
             $scope.diagramResult = [response.data.gadjets,
                 response.data.internet, response.data.messenger, response.data.gaming,
                 response.data.fisiology]
+            $scope.dataChart = [
+                [22, 22, 9, 30, 18],
+                [15, 15, 6, 19, 11],
+                [7, 7, 3, 9, 5],
+                $scope.diagramResult]
             $scope.dataInternetDiagram = [response.data.internetDiagram.internetUsed,
                 response.data.internetDiagram.internetNotUsed,
                 response.data.internetDiagram.gameUsed,

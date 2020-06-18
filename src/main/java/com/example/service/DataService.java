@@ -6,21 +6,24 @@ import com.example.diagrams.Diagram7;
 import com.example.diagrams.InternetDiagram;
 import com.example.entity.Person;
 import com.example.entity.Question;
+import com.example.repository.PersonRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
 public class DataService {
-    private static List<Person> data = new ArrayList<>();
+    @Autowired
+    PersonRepository personRepository;
 
-    public void add(Person person) {
-        data.add(person);
+    public Person add(Person person) {
+        return personRepository.save(person);
     }
 
     public InternetDiagram getInternetDiagram() {
+        List<Person> data = personRepository.findAll();
         int internetUsed = (int) data.stream().filter(e -> {
             Question question3 = e.getUserData().getData().stream().filter(question -> question.getId().equals("3") && question.getType().equals("internet")).findAny().get();
             List<String> q2 = (List<String>) question3.getValue();
@@ -51,8 +54,7 @@ public class DataService {
     }
 
     public List<Person> getData() {
-//        data.add(test());
-        return data;
+        return personRepository.findAll();
     }
 
 //    public Person test() {
@@ -82,6 +84,8 @@ public class DataService {
         AtomicInteger q4 = new AtomicInteger(0);
         AtomicInteger q5 = new AtomicInteger(0);
         AtomicInteger q6 = new AtomicInteger(0);
+
+        List<Person> data = personRepository.findAll();
 
         data.forEach(e -> {
             Question question2 = e.getUserData().getData().stream().filter(question -> question.getId().equals("2") && question.getType().equals("karantin"))
@@ -122,6 +126,8 @@ public class DataService {
         AtomicInteger q4 = new AtomicInteger(0);
         AtomicInteger q5 = new AtomicInteger(0);
 
+        List<Person> data = personRepository.findAll();
+
         data.forEach(e -> {
             Question question2 = e.getUserData().getData().stream().filter(question -> question.getId().equals("3") && question.getType().equals("karantin"))
                     .findAny().get();
@@ -155,6 +161,8 @@ public class DataService {
         AtomicInteger q2 = new AtomicInteger(0);
         AtomicInteger q3 = new AtomicInteger(0);
         AtomicInteger q4 = new AtomicInteger(0);
+
+        List<Person> data = personRepository.findAll();
 
         data.forEach(e -> {
             Question question2 = e.getUserData().getData().stream().filter(question -> question.getId().equals("4") && question.getType().equals("karantin"))

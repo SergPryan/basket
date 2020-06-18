@@ -1,17 +1,16 @@
-package com.example.commons;
+package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 
-@SpringBootApplication
 @EntityScan("com.example.commons")
-@ComponentScan("com.example")
-public class BasketApplication {
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+public class OprosnikApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BasketApplication.class, args);
+		SpringApplication.run(OprosnikApplication.class, args);
 	}
 }
