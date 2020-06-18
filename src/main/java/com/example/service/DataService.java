@@ -10,6 +10,7 @@ import com.example.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -19,6 +20,7 @@ public class DataService {
     PersonRepository personRepository;
 
     public Person add(Person person) {
+        person.setUpdated(LocalDateTime.now());
         return personRepository.save(person);
     }
 
